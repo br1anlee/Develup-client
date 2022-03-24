@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # DevelUp
 
 A fullstack application that allows users to create flash cards and organize them by categories. Inside each category will have a list of decks. For example, inside a Web Developer catergory there might be a deck for React and Node.
@@ -33,7 +32,6 @@ It's time to DevelUp!
 ## [noSQL] Data Model Diagram
 
 ![and RD](DevelUp-ERD.drawio.png)
-=======
 | Method | Path | Purpose |
 | ------ | -------------- | -------------------------------- |
 | GET | `/` | home page that allows user to sign in or sends user to create an account |
@@ -57,4 +55,3 @@ It's time to DevelUp!
 | POST | `/category/:id/Card:id` | creates a card, the user always stays on `GET /category/:id` |
 | PUT | `/category/:id/Card` | user can update a card and the user always stays on `GET /category/:id` |
 | DELETE | `/category/:id/Card` | user can delete of their cards, the user always stays on `GET /category/:id` |
->>>>>>> fd8bb6b (readme)
