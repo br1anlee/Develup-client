@@ -6,6 +6,7 @@ It's time to DevelUp!
 ## User Stories
 * As an unregistered user, I would like to sign up with name, username, email, and password
 * As a registered user, I would like to sign in with email and password
+
 ##### As a signed in user: 
 * I would like to be able to change my name and or username
 * I would like to be able to add a profile picture
