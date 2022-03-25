@@ -29,9 +29,10 @@ It's time to DevelUp!
 * MongoDB
 * Bootstrap
 
+
 ## [noSQL] Data Model Diagram
 
-![and RD](DevelUp-ERD.drawio.png)
+![and RD](DevelUp-ERD.png)
 
 # RESTful Routing
 | Method | Path | Purpose |
@@ -53,6 +54,20 @@ It's time to DevelUp!
 | POST | /category | users can create decks |
 | PUT | /category/:id | user can edit their created decks |
 | DELETE | /category/:id | user can delete their created decks|
+
+
+ ## Wireframes
+
+ 
+![Sign-In](./wireframes/Sign%20In.png)
+![Sign-Up](./wireframes/Sign%20Up.png)
+![Profile](./wireframes/Profie%20Page.png)
+![Categories](./wireframes/Category%20Page.png)
+![Create a deck](./wireframes/Create%20a%20deck%20Page.png)
+![Decks](./wireframes/Decks%20Page.png)
+![Card-Question](./wireframes/Card%20Page%20%5BQuestion%5D.png)
+![Card-Answer](./wireframes/Card%20Page%20%5BAnswer%5D.png)
+
 
 
  # MVPs
