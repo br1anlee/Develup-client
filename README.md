@@ -31,7 +31,7 @@ It's time to DevelUp!
 
 ## [noSQL] Data Model Diagram
 
-![and RD](DevelUp-ERD.drawio.png)
+![and RD](DevelUp-ERD.png)
 
 | Method | Path | Purpose |
 | ------ | -------------- | -------------------------------- |
