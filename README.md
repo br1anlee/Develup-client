@@ -76,6 +76,15 @@ It's time to DevelUp!
 
 
  # MVPs
+- [] Build a frontend client using React
+- [] Build a MongoDB database of users that can be accessed to create and login users
+- [] Create functionality where users are able to create categories, decks and cards
+- [] Login functionality
+- [] Register functionality
+- [] Logout functioanlity
+
+
+
 - [] Build a frontend client using REACT
 - [] Build a Mongodb database of users that can be accessed to create and login users
 - [] Users are able to log out from the application
