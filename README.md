@@ -6,21 +6,18 @@ It's time to DevelUp!
 ## User Stories
 * As an unregistered user, I would like to sign up with name, username, email, and password
 * As a registered user, I would like to sign in with email and password
+
 ##### As a signed in user: 
 * I would like to be able to change my name and or username
-* I would like to be able to add an avatar
+* I would like to be able to add a profile picture
 * I would like to be able to sign out
-* I would like to have my own profile page which displays my name and avatar
-* I would like to see a list of catergories to study
-* I would like to see a list of decks inside the catergories
+* I would like to see a list of card decks to study
+* I would like the ability to add certain decks to my favorites
+* I would like to have my own profile page which displays my favorite decks
+* I would like to remove decks from my favorites list
 * I would like to see the cards that are inside the decks
   - see the questions on the cards
   - after submitting see the actual answer
-* I would like to be able to create my own catergories and decks
-* I would like to be able to delete the decks I've created
-
-## DevelUp Server
-[DevelUp Server](https://github.com/Jamelscott/Develup-server)
 
 ## Installation Instructions
 - TBD
@@ -79,23 +76,15 @@ It's time to DevelUp!
 
 
  # MVPs
-- [] Build a frontend client using REACT
-- [] Build a Mongodb database of users that can be accessed to create and login users
-- [] Users are able to log out from the application
-- [] Allow users to have the ability to upload their own profile picture
-- [] Have one category with 2 decks for users to study from
-- [] Allow users to favorite their deck
-- [] Allow users to see all of their favorites 
-- [] Allow users to update their profile 
-- [] Allow users to delete their favorites 
-- [] Allow users to see the cards that are inside the decks
-- [] Allow users to type the answers to the questions in the deck of cards
+- [] Build a frontend client using React
+- [] Build a MongoDB database of users that can be accessed to create and login users
+- [] Create functionality where users are able to create categories, decks and cards
+- [] Login functionality
+- [] Register functionality
+- [] Logout functionality
+
 
 # Stretch Goals
-- [] Create multiple categories with at least 2 decks of flash cards
-- [] Create an about DevelUp + page 
-- [] Allow users to create a deck of flash cards
-- [] Allow users to update and/or delete the deck of flash cards they have created
-- [] Allow users to favorite deck of flash cards of their liking
-- [] Allow users to create categories of the deck of flash cards
+- [] Users are able to favorite their decks
 - [] Allow users to choose pre-sets of the difficulty level (Easy, Medium, Hard)
+- [] Users are able to upload images of the decks
