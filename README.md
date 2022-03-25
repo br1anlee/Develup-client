@@ -8,15 +8,19 @@ It's time to DevelUp!
 * As a registered user, I would like to sign in with email and password
 ##### As a signed in user: 
 * I would like to be able to change my name and or username
-* I would like to be able to add a profile picture
+* I would like to be able to add an avatar
 * I would like to be able to sign out
-* I would like to see a list of card decks to study
-* I would like the ability to add certain decks to my favorites
-* I would like to have my own profile page which displays my favorite decks
-* I would like to remove decks from my favorites list
+* I would like to have my own profile page which displays my name and avatar
+* I would like to see a list of catergories to study
+* I would like to see a list of decks inside the catergories
 * I would like to see the cards that are inside the decks
   - see the questions on the cards
   - after submitting see the actual answer
+* I would like to be able to create my own catergories and decks
+* I would like to be able to delete the decks I've created
+
+## DevelUp Server
+[DevelUp Server](https://github.com/Jamelscott/Develup-server)
 
 ## Installation Instructions
 - TBD
