@@ -8,7 +8,7 @@ It's time to DevelUp!
 * As a registered user, I would like to sign in with email and password
 ##### As a signed in user: 
 * I would like to be able to change my name and or username
-* I would like to be able to add a avatar
+* I would like to be able to add an avatar
 * I would like to be able to sign out
 * I would like to have my own profile page which displays my name and avatar
 * I would like to see a list of catergories to study
