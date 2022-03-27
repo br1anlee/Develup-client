@@ -1,4 +1,7 @@
-# DevelUp
+<img align="left" width="40" height="auto" style="padding-right: 10px" src="public/logo.png" alt="Logo of DevelUp">
+
+# DevelUp!
+
 A fullstack application that allows users to create flash cards and organize them by categories. Inside each category will have a list of decks. For example, inside a Web Developer catergory there might be a deck for React and Node.
 Inside each deck will have a series of cards that contain questions of varying difficulties. A user can submit their answers to the questions and then the actual answer will be revealed. A user can utilize the app to see what topics they understand and what topics they need to improve on.
 It's time to DevelUp! 
