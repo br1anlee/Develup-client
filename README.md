@@ -1,4 +1,4 @@
-<img align="left" width="40" height="auto" style="padding-right: 10px" src="public/logo.png" alt="Logo of DevelUp">
+<img align="left" width="40" height="auto" style="padding-right: 10px padding-top: 10px" src="public/logo.png" alt="Logo of DevelUp">
 
 # DevelUp!
 
