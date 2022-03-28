@@ -19,6 +19,7 @@ function App() {
   // useState is null because there is no logged in user yet.
 const [currentUser, setCurrentUser] = useState(null)
 
+const [currentCategory, setCurrentCategory] = useState({})
 
   // useEffect that handles localstraoge if the user navigates away from the page or refreshes
 useEffect(() => {
@@ -58,7 +59,7 @@ const handleLogout = () => {
           {/* Path TO CATEGORIES */}
           <Route 
             path='/category'
-            element={<Category />}
+            element={<Category currentCategory={currentCategory}/>}
           />
 
           <Route 

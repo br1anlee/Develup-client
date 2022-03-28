@@ -31,8 +31,8 @@ function Navbar({ currentUser }) {
           </li>
           <li className="nav-text-nohover">
             <img
-              style={{ height: '50px', width: '50px' }}
-              src="http://placekitten.com/200/200"
+              style={{ height: '40px', width: '40px' }}
+              src="./logo.png"
             ></img>
             <p className='nav-text'>Welcome, {currentUser}</p>
           </li>
