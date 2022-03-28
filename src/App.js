@@ -12,8 +12,9 @@ import Signup from './components/pages/Signup'
 import Profile from './components/pages/Profile'
 import Category from './components/pages/Category'
 import Error from './components/pages/Error'
-import Navbar from './components/layout/Navbar'
 import Decks from './components/pages/Decks'
+import Navbar from './components/layout/Navbar'
+import About from './components/pages/About'
 import axios from 'axios';
 
 
@@ -39,7 +40,7 @@ useEffect(() => {
 
   // useEffect that handles localstorage if the user navigates away from the page or refreshes
 useEffect(() => {
-  const token = localStorage.getItem('jwt_token')
+  const token = localStorage.getItem('jwt')
   // if a token is found -> Log the user in OTHERWISE make sure they are logged out
 if (token) {
   setCurrentUser(jwt_decode(token))
@@ -57,13 +58,19 @@ const handleLogout = () => {
 }
   return (
     <Router>
-      <Navbar handleLogout={handleLogout} currentUser={currentUser}/>
+      <Navbar currentUser={currentUser} handleLogout={handleLogout}/>
       <div>
         <Navbar currentUser={currentUser}/>
         <Routes>
           {/* PATH to landing page (Landing page will be the login page) */}
+
           <Route 
             path="/"
+            element={<About />}
+          />
+
+          <Route 
+            path="/login"
             element={<Login currentUser={currentUser} setCurrentUser={setCurrentUser}/>}
           />
 
@@ -76,7 +83,7 @@ const handleLogout = () => {
           {/* Path TO CATEGORIES */}
           <Route 
             path='/category'
-            element={<Category category={category} setCategory={setCategory}/>}
+            element={<Category category={category}/>}
           />
 
           <Route 

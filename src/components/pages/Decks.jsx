@@ -3,18 +3,31 @@ import {useState, useEffect} from 'react'
 import axios from 'axios'
 
 export default function Deck ({category}) {
-    const [showDeck, setShowDeck] = useState(false)
     const [deck, setDeck] = useState({})
     const {id} = useParams()
 
-    useEffect(() => {
-        console.log('hello this is the deck console')
-        axios.get(`${process.env.REACT_APP_SERVER_URL}/category/${id}`)
-        .then(response => {
-            console.log(response)
-        })
-    },[])
+    // useEffect(() => {
+    //     axios.get(`${process.env.REACT_APP_SERVER_URL}/category/${id}/decks`)
+    // })
+
+    const showAllDecks = category.map((category, i) => {
+        console.log(category)
+        return (
+            category.decks.map((decks, i) =>{
+                console.log(decks)
+                return (
+                    <p>{decks.deckName}</p>
+                )
+            })
+        )
+    })
+
+  
     return (
-        <h1>This is the Decks</h1>
+        <>
+            <h1>Decks</h1>
+            {showAllDecks}
+        </>
+
     )
 }

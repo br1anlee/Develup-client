@@ -34,7 +34,9 @@ function Navbar({ currentUser }) {
               style={{ height: '50px', width: '50px' }}
               src="http://placekitten.com/200/200"
             ></img>
-            <p className='nav-text'>Welcome, {currentUser}</p>
+
+            {currentUser ? <p className='nav-text'>Welcome, {currentUser.name}</p> : <p>Not Logged In</p>}
+
           </li>
           {SidebarData.map((item, index) => {
             return (
