@@ -1,4 +1,7 @@
-# DevelUp
+<img align="left" width="40" height="auto" style="padding-right: 10px padding-top: 10px" src="public/logo.png" alt="Logo of DevelUp">
+
+# DevelUp!
+
 A fullstack application that allows users to create flash cards and organize them by categories. Inside each category will have a list of decks. For example, inside a Web Developer catergory there might be a deck for React and Node.
 Inside each deck will have a series of cards that contain questions of varying difficulties. A user can submit their answers to the questions and then the actual answer will be revealed. A user can utilize the app to see what topics they understand and what topics they need to improve on.
 It's time to DevelUp! 
@@ -32,7 +35,7 @@ It's time to DevelUp!
 
 ## [noSQL] Data Model Diagram
 
-![and RD](DevelUp-ERD.png)
+![and RD](/public/DevelUp-ERD.png)
 
 | Method | Path | Purpose |
 | ------ | -------------- | -------------------------------- |
@@ -64,14 +67,14 @@ It's time to DevelUp!
  ## Wireframes
 
  
-![Sign-In](./wireframes/Sign%20In.png)
-![Sign-Up](./wireframes/Sign%20Up.png)
-![Profile](./wireframes/Profie%20Page.png)
-![Categories](./wireframes/Category%20Page.png)
-![Create a deck](./wireframes/Create%20a%20deck%20Page.png)
-![Decks](./wireframes/Decks%20Page.png)
-![Card-Question](./wireframes/Card%20Page%20%5BQuestion%5D.png)
-![Card-Answer](./wireframes/Card%20Page%20%5BAnswer%5D.png)
+![Sign-In](/public/wireframes/Sign%20In.png)
+![Sign-Up](/public/wireframes/Sign%20Up.png)
+![Profile](/public/wireframes/Profie%20Page.png)
+![Categories](/public/wireframes/Category%20Page.png)
+![Create a deck](/public/wireframes/Create%20a%20deck%20Page.png)
+![Decks](/public/wireframes/Decks%20Page.png)
+![Card-Question](/public/wireframes/Card%20Page%20%5BQuestion%5D.png)
+![Card-Answer](/public/wireframes/Card%20Page%20%5BAnswer%5D.png)
 
 
 
