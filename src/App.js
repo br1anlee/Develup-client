@@ -13,6 +13,8 @@ import Profile from './components/pages/Profile'
 import Category from './components/pages/Category'
 import Error from './components/pages/Error'
 import Decks from './components/pages/Decks'
+import Navbar from './components/layout/Navbar'
+import About from './components/pages/About'
 import axios from 'axios';
 
 function App() {
@@ -55,11 +57,18 @@ const handleLogout = () => {
 }
   return (
     <Router>
+      <Navbar currentUser={currentUser} handleLogout={handleLogout}/>
       <div>
         <Routes>
           {/* PATH to landing page (Landing page will be the login page) */}
+
           <Route 
             path="/"
+            element={<About />}
+          />
+
+          <Route 
+            path="/login"
             element={<Login currentUser={currentUser} setCurrentUser={setCurrentUser}/>}
           />
 
