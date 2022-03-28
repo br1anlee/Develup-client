@@ -2,7 +2,7 @@ import {useState, useEffect} from 'react'
 import axios from 'axios'
 import FileUploadForm from '../FileUploadForm'
 
-export default function Profile() {
+export default function Profile({currentUser}) {
     const [msg, setMsg] = useState('')
 
     // useEffect is used to receive data from the backend
@@ -28,7 +28,6 @@ export default function Profile() {
     return (
         <div>
             <h3>Welcome to DevelUp+ {currentUser.name}</h3>
-            <p></p>
             
         </div>
     )

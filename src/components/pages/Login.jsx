@@ -1,10 +1,10 @@
 import {useState} from 'react'
 import axios from 'axios'
-import jwt_decode from 'jwt_decode'
+import jwt_decode from 'jwt-decode'
 import {Navigate} from 'react-router-dom'
 
 
-export default function Login() {
+export default function Login({currentUser, setCurrentUser}) {
     const [form, setForm] = useState({
         email: '',
         password: ''
@@ -53,7 +53,7 @@ export default function Login() {
                 <input 
                     type="email" 
                     id="email"
-                    onChange={e => setForm({... form, email: e.target.value})}
+                    onChange={e => setForm({...form, email: e.target.value})}
                     value={form.email}
                     placeholder="Email"
                 />
@@ -63,7 +63,7 @@ export default function Login() {
                 <input 
                     type="password" 
                     id="password"
-                    onChange={e => setForm({... form.email, password: e.target.value})}
+                    onChange={e => setForm({...form, password: e.target.value})}
                     value={form.password}
                     placeholder="Password"
                 />

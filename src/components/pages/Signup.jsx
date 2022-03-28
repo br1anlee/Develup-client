@@ -2,11 +2,11 @@ import {useState} from 'react'
 import axios from 'axios'
 import jwt_decode from 'jwt-decode'
 import {Navigate} from 'react-router-dom'
-import FileUploadForm from './FileUploadForm';
+import FileUploadForm from '../FileUploadForm';
 
 
 
-export default function Signup() {
+export default function Signup({currentUser, setCurrentUser}) {
     const [form, setForm] = useState({
         email: '',
         name: '',
@@ -48,6 +48,7 @@ export default function Signup() {
     if (currentUser) return <Navigate to="/category" />
     return (
         <div>
+            <img src="../public/logo.png" alt="" />
             <h3>Become a User for DevelUp!</h3>
             <p>{msg}</p>
             
@@ -58,7 +59,7 @@ export default function Signup() {
                     type="text" 
                     id="name"
                     value={form.name}
-                    onChange={e => setForm({... form, name: e.target.value})}
+                    onChange={e => setForm({...form, name: e.target.value})}
                     placeholder="Name"
                 />
 
@@ -78,7 +79,7 @@ export default function Signup() {
                     type="password" 
                     id="password"
                     value={form.password}
-                    onChange={e => setForm({... form, password: e.target.value})}
+                    onChange={e => setForm({...form, password: e.target.value})}
                 />
 
                 {/* Password Confirmation */}
@@ -87,7 +88,7 @@ export default function Signup() {
                     type="password"  
                     id="passwordConfirmation" 
                     value={form.passwordConfirmation}
-                    onChange={e => setForm({... form, passwordConfirmation: e.target.value})}
+                    onChange={e => setForm({...form, passwordConfirmation: e.target.value})}
                 />
 
                 <input type="submit"/>

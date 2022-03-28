@@ -43,13 +43,13 @@ const handleLogout = () => {
           {/* PATH to landing page (Landing page will be the login page) */}
           <Route 
             path="/"
-            element={<Login />}
+            element={<Login currentUser={currentUser} setCurrentUser={setCurrentUser}/>}
           />
 
           {/* Path TO REGISTER */}
           <Route 
             path='/signup'
-            element={<Signup />}
+            element={<Signup currentUser={currentUser} setCurrentUser={setCurrentUser}/>}
           />
 
           {/* Path TO CATEGORIES */}
@@ -61,7 +61,7 @@ const handleLogout = () => {
           {/* Path TO USER'S PROFILE */}
           <Route 
             path="/profile"
-            element={<Profile />}
+            element={currentUser ? <Profile currentUser={currentUser} /> : <Navigate to="/" />}
           />
 
           {/* 404 ERROR PAGE */}

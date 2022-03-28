@@ -1,9 +1,12 @@
 import axios from 'axios'
+import {useState} from 'react'
 
 export default function FileUploadForm () {
     const [formImg, setFormImg] = useState('')
     const [msg, setMsg] = useState('')
     const [displayImg, setDisplayImg] = useState('')
+    
+    
     const handleSubmit = async e => {
         e.preventDefault()
         try {
@@ -12,7 +15,7 @@ export default function FileUploadForm () {
             const response = await axios.post(`${process.env.REACT_APP_SERVER_URL}/api-v1/images`, fd)
             setDisplayImg(response.data.cloudImage)
         } catch (err) {
-            console.log(error)
+            console.log(err)
             setMsg('Something went wrong.')
         }
     }
@@ -27,8 +30,8 @@ export default function FileUploadForm () {
                     alt="Profile picture"
                 />
             }
-            <form>
-                <label htmlFor="image">Upload your profile picture</label>
+            <form onSubmit={handleSubmit} encType='multipart/form'>
+                <label htmlFor="image">Upload your profile picture: </label>
                 <input type="file" name="image" id="image" onChange={e => setFormImg(e.target.files[0])}/>
 
                 <input type="submit"/>
