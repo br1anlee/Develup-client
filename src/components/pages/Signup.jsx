@@ -59,7 +59,7 @@ export default function Signup() {
                     id="name"
                     value={form.name}
                     onChange={e => setForm({... form, name: e.target.value})}
-                    placeholder="Please enter your name"
+                    placeholder="Name"
                 />
 
                 {/* Email input */}
@@ -69,7 +69,7 @@ export default function Signup() {
                     id="email"
                     value={form.email}
                     onChange={e => setForm({...form, email: e.target.value})}
-                    placeholder="Please enter your email"
+                    placeholder="Email"
                 />
 
                 {/* Password */}
