@@ -12,6 +12,7 @@ import Signup from './components/pages/Signup'
 import Profile from './components/pages/Profile'
 import Category from './components/pages/Category'
 import Error from './components/pages/Error'
+import Navbar from './components/layout/Navbar';
 
 function App() {
   // state with the user data when the user is logged in  
@@ -40,6 +41,7 @@ const handleLogout = () => {
   return (
     <Router>
       <div>
+        <Navbar currentUser={currentUser}/>
         <Routes>
           {/* PATH to landing page (Landing page will be the login page) */}
           <Route 
