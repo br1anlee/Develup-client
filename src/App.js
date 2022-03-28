@@ -18,6 +18,7 @@ function App() {
   // useState is null because there is no logged in user yet.
 const [currentUser, setCurrentUser] = useState(null)
 
+
   // useEffect that handles localstraoge if the user navigates away from the page or refreshes
 useEffect(() => {
   const token = localStorage.getItem('jwt_token')
@@ -58,13 +59,17 @@ const handleLogout = () => {
             element={<Category />}
           />
 
+          <Route 
+            path='/category/:id'
+            element={<Category />}
+          />
+
           {/* Path TO USER'S PROFILE */}
           <Route 
             path="/profile"
             element={currentUser ? <Profile currentUser={currentUser} /> : <Navigate to="/" />}
           />
 
-          {/* 404 ERROR PAGE */}
           <Route 
             path="*"
             element={<Error />}

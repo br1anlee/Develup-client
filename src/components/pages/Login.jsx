@@ -14,10 +14,9 @@ export default function Login({currentUser, setCurrentUser}) {
 
     const handleFormSubmit = async e => {
         e.preventDefault()
-
         try {
             // post to the backend with the form data to login
-            const response = axios.post(`${process.env.REACT_APP_SERVER_URL}/api-v1/users/login`, form)
+            const response = await axios.post(`${process.env.REACT_APP_SERVER_URL}/api-v1/users/login`, form)
 
             // decode the token that is sent to use
             const {token} = response.data
@@ -40,8 +39,6 @@ export default function Login({currentUser, setCurrentUser}) {
 
     // navigate to the user's profile if currentUser is NOT null
     if (currentUser) return <Navigate to="/category"/>
-
-
     return (
         <div>
             <h1>Sign In</h1>
@@ -70,6 +67,7 @@ export default function Login({currentUser, setCurrentUser}) {
 
                 <input type="submit"/>
             </form>
+
         </div>
 
     )
