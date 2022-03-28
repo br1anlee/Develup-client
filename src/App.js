@@ -16,6 +16,7 @@ import Navbar from './components/layout/Navbar'
 import Decks from './components/pages/Decks'
 import axios from 'axios';
 
+
 function App() {
   // state with the user data when the user is logged in  
   // useState is null because there is no logged in user yet.
@@ -58,6 +59,7 @@ const handleLogout = () => {
     <Router>
       <Navbar handleLogout={handleLogout} currentUser={currentUser}/>
       <div>
+        <Navbar currentUser={currentUser}/>
         <Routes>
           {/* PATH to landing page (Landing page will be the login page) */}
           <Route 

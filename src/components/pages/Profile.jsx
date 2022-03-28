@@ -25,6 +25,7 @@ export default function Profile({currentUser}) {
             }
         })()
     }, [])
+    
     return (
         <div>
             <h3>Welcome to DevelUp+ {currentUser.name}</h3>
