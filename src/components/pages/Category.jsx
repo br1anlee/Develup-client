@@ -1,9 +1,11 @@
 import { Link } from "react-router-dom";
+
+
 export default function Category({ category }) {
   const categoryLinks = category.map((category, i) => {
     return (
       <li key={`category-link${i}`}>
-        <Link to={`/category/${category._id}/${category.decks}`}>{category.name}</Link>
+        <Link to={`/category/${category._id}`}>{category.name}</Link>
       </li>
     );
   });
@@ -14,3 +16,5 @@ export default function Category({ category }) {
     </div>
   );
 }
+
+
