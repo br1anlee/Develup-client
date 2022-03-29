@@ -79,7 +79,7 @@ const handleLogout = () => {
 
           <Route 
             path="/"
-            element={<About handleLogout={handleLogout} />}
+            element={<About />}
           />
 
           <Route 
@@ -106,7 +106,7 @@ const handleLogout = () => {
 
           <Route 
             path="/create-deck"
-            element={<Create currentUser={currentUser} setCategory={setCategory} category={category}/>}
+            element={currentUser ? <Create currentUser={currentUser} setCategory={setCategory} category={category}/> : <Navigate to="/login" />}
           />
 
           <Route 

@@ -49,4 +49,3 @@ export default function Deck({ category, currentUser, users }) {
     </div>
   );
 }
-
