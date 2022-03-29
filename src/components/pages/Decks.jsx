@@ -21,7 +21,7 @@ export default function Deck ({category}) {
         })
     }
 
-    setCurrentCategory(category[deckIdx])
+    // setCurrentCategory(category[deckIdx])
 
 
     return (

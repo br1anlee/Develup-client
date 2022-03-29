@@ -103,7 +103,7 @@ const handleLogout = () => {
           />
 
           <Route 
-            path='/category/:id/:id'
+            path='/category/:id/deck/:deckId'
             element={<Cards category={category}/>}
           />
 
