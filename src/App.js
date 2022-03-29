@@ -16,6 +16,7 @@ import Decks from './components/pages/Decks'
 import Navbar from './components/layout/Navbar'
 import About from './components/pages/About'
 import Create from './components/pages/Create'
+import Cards from './components/pages/Cards'
 import axios from 'axios';
 
 
@@ -99,6 +100,11 @@ const handleLogout = () => {
           <Route 
             path='/category/:id'
             element={<Decks category={category}/> }
+          />
+
+          <Route 
+            path='/category/:id/deck/:deckId'
+            element={<Cards category={category}/>}
           />
 
           {/* Path TO USER'S PROFILE */}
