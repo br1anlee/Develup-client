@@ -12,13 +12,16 @@ export default function Deck({ category, currentUser, users }) {
   let deckIdx = category.findIndex((object) => {
     return object._id === id;
   });
+  console.log(deckIdx)
 
   const [currentCategory, setCurrentCategory] = useState(category[deckIdx]);
+
+  console.log(users)
 
   let showAllDecks;
   if (deckIdx != -1) {
     showAllDecks = category[deckIdx].decks.map((deck, i) => {
-
+console.log(users)
 
         let userIdx = users.findIndex((object) => {
           return object._id === deck.author;
