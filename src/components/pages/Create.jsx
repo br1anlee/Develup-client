@@ -3,7 +3,7 @@ import axios from 'axios';
 import VisibleCards from './VisibleCards';
 import { Navigate } from 'react-router-dom';
 
-function Create({ currentUser }) {
+function Create({ currentUser, setCategory, category }) {
   //   const handleSubmit = (e) => {
 
   //     e.preventDefault()
@@ -30,6 +30,7 @@ function Create({ currentUser }) {
   const [form, setForm] = useState({
     name: '',
     deckName: '',
+    author: currentUser.id,
     cards: []
   });
 
@@ -54,6 +55,8 @@ function Create({ currentUser }) {
         const response = await axios.post(`http://localhost:2996/api-v1/category`, form)
       
         console.log(response);
+
+        setCategory(category);
 
         <Navigate to="/category"/>;
 
