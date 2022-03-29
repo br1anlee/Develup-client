@@ -1,10 +1,11 @@
 import React from 'react';
-import * as AiIcons from 'react-icons/ai';
+// import * as AiIcons from 'react-icons/ai';
 import * as FaIcons from 'react-icons/fa';
+import * as AiIcons from 'react-icons/ai';
 import * as MdIcons from 'react-icons/md';
 import { Link } from 'react-router-dom';
 import { useState } from 'react';
-import { SidebarData, sideBarDataBottom } from './SidebarData';
+import { SidebarData } from './SidebarData';
 // import { IconContext } from 'react-icons';
 import './navbar.css';
 
@@ -14,6 +15,37 @@ function Navbar({ currentUser, handleLogout }) {
   const showSidebar = () => {
     setsidebar(!sidebar);
   };
+
+  const loggedIn = (
+    <>
+      <li
+        key={'navbar-last'}
+        style={{ backgroundColor: '#4B5869' }}
+        className={'nav-text'}
+      >
+        <Link to="/">
+          <AiIcons.AiOutlineLogout />
+          <span onClick={handleLogout}>log out</span>
+        </Link>
+      </li>
+    </>
+  );
+
+  // if the user is logged out
+  const loggedOut = (
+    <>
+      <li
+        key={'navbar-last'}
+        style={{ backgroundColor: '#4B5869' }}
+        className={'nav-text'}
+      >
+        <Link to="/login">
+          <AiIcons.AiOutlineLogout />
+          <span>log in</span>
+        </Link>
+      </li>
+    </>
+  );
 
   return (
     <>
@@ -26,21 +58,29 @@ function Navbar({ currentUser, handleLogout }) {
         <ul className="nav-menu-items" onClick={showSidebar}>
           <li className="navbar-toggle">
             <Link to="#" className="menu-bars">
-              <MdIcons.MdOutlineKeyboardReturn style={{ color: 'white' }}/>
+              <MdIcons.MdOutlineKeyboardReturn style={{ color: 'white' }} />
             </Link>
           </li>
           <li className="nav-text-nohover">
             <img
+              alt="user"
               style={{ height: '40px', width: '40px' }}
               src="./logo.png"
             ></img>
 
-            {currentUser ? <p className='nav-text'>Welcome, {currentUser.name}</p> : <p>Not Logged In</p>}
-
+            {currentUser ? (
+              <p className="nav-text">Welcome, {currentUser.name}</p>
+            ) : (
+              <p>Not Logged In</p>
+            )}
           </li>
           {SidebarData.map((item, index) => {
             return (
-              <li key={`navbar-${index}`} style={{backgroundColor:`${item.background}`}} className={item.cName}>
+              <li
+                key={`navbar-${index}`}
+                style={{ backgroundColor: `${item.background}` }}
+                className={item.cName}
+              >
                 <Link to={item.path}>
                   {item.icon}
                   <span>{item.title}</span>
@@ -48,16 +88,7 @@ function Navbar({ currentUser, handleLogout }) {
               </li>
             );
           })}
-          {/* {sideBarDataBottom.map((item, index) => {
-                return (
-                  <li key={`navbar-lower-${index}`} className={item.cName}>
-                    <Link to={item.path}>
-                      {item.icon}
-                      <span>{item.title}</span>
-                    </Link>
-                  </li>
-                );
-              })} */}
+          {currentUser ? loggedIn : loggedOut}
         </ul>
       </nav>
     </>
@@ -65,4 +96,3 @@ function Navbar({ currentUser, handleLogout }) {
 }
 
 export default Navbar;
-

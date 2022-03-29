@@ -1,33 +1,34 @@
-import {useParams, Link} from 'react-router-dom'
-import {useState, useEffect} from 'react'
-import axios from 'axios'
+import { useParams, Link } from 'react-router-dom';
+import { useState } from 'react';
+// import {useState} from 'react'
 
-export default function Deck ({category}) {
-    const [deck, setDeck] = useState({})
-    const {id} = useParams()
+export default function Deck({ category }) {
+  const { id } = useParams();
 
-    // useEffect(() => {
-    //     axios.get(`${process.env.REACT_APP_SERVER_URL}/category/${id}/decks`)
-    // })
+  const [currentCategory, setCurrentCategory] = useState({});
 
-    const showAllDecks = category.map((category, i) => {
-        console.log(category)
-        return (
-            category.decks.map((decks, i) =>{
-                console.log(decks)
-                return (
-                    <p>{decks.deckName}</p>
-                )
-            })
-        )
-    })
+  let deckIdx = category.findIndex((object) => {
+    return object._id === id;
+  });
 
-  
-    return (
-        <>
-            <h1>Decks</h1>
-            {showAllDecks}
-        </>
+  let showAllDecks;
 
-    )
+  if (deckIdx != -1) {
+    showAllDecks = category[deckIdx].decks.map((deck, i) => {
+      return (
+        <li key={`deck-${i}`}>
+          <Link to={`/category/${id}/deck/${deck._id}`} >
+            {deck.deckName}
+          </Link>
+        </li>
+      );
+    });
+  }
+
+  return (
+    <>
+      <h1>Decks</h1>
+      <ul>{showAllDecks}</ul>
+    </>
+  );
 }

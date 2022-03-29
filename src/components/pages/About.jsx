@@ -1,3 +1,5 @@
+import 'bootstrap/dist/css/bootstrap.css';
+import 'bootstrap/dist/js/bootstrap.bundle';
 import { Link } from "react-router-dom";
 import { Card, Button, Container, Row, Col } from "react-bootstrap";
 import '../layout/About.css'

@@ -1,4 +1,4 @@
-import { useState, useEffect} from 'react';
+import { useState} from 'react';
 import axios from 'axios';
 import VisibleCards from './VisibleCards';
 import { Navigate } from 'react-router-dom';
