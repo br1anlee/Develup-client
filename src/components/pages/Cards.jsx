@@ -3,18 +3,23 @@ import {useParams} from 'react-router-dom'
 
 export default function Cards ({category}) {
     const {id} = useParams()
-    const [currentCards, setCurrentCards] = useState({})
+    const {deckId} = useParams()
 
-
-    let cardIdx = category.findIndex(object => {
+    let categoryIdx = category.findIndex(object => {
         return object._id === id
+    })
+
+    const currentDeck = category[categoryIdx]
+
+    let deckIdx = currentDeck.decks.findIndex(object => {
+        return object._id === deckId
     })
 
 
     let showAllCards;
 
-    if (cardIdx != -1){
-         showAllCards = category[cardIdx].decks[cardIdx].cards.map((card, i) => {
+    if (deckIdx != -1){
+         showAllCards = currentDeck.decks[deckIdx].cards.map((card, i) => {
             return (
                 <>
                     <p>{card.question}</p>

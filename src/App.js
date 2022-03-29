@@ -66,14 +66,13 @@ const handleLogout = () => {
       <div>
         <Routes>
           {/* PATH to landing page (Landing page will be the login page) */}
-
           <Route 
-            path="/"
+            path="/about"
             element={<About handleLogout={handleLogout} />}
           />
 
           <Route 
-            path="/login"
+            path="/"
             element={<Login currentUser={currentUser} setCurrentUser={setCurrentUser}/>}
           />
 

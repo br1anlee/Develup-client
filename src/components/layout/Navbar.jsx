@@ -40,7 +40,7 @@ function Navbar({ currentUser, handleLogout }) {
         style={{ backgroundColor: '#4B5869' }}
         className={'nav-text'}
       >
-        <Link to="/login">
+        <Link to="/">
           <AiIcons.AiOutlineLogout />
           <span>Login</span>
         </Link>
