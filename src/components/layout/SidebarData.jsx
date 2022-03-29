@@ -31,14 +31,7 @@ export const SidebarData = [
     icon: <BsIcons.BsInfoSquare />,
     cName: 'nav-text',
     background: '#4B5869'
-  },
-  {
-    title: 'Logout',
-    path: '/logout',
-    icon: <AiIcons.AiOutlineLogout />,
-    cName: 'nav-text',
-    background: '#4B5869'
-  },
+  }
 ];
 
 export const sideBarDataBottom = [
