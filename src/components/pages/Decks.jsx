@@ -5,6 +5,7 @@ import EditDeck from './EditDeck';
 import Category from './Category';
 // import {useState} from 'react'
 
+
 export default function Deck({ category, currentUser, users }) {
   const { id } = useParams();
 
@@ -12,14 +13,7 @@ export default function Deck({ category, currentUser, users }) {
     return object._id === id;
   });
 
-
-
   const [currentCategory, setCurrentCategory] = useState(category[deckIdx]);
-
-
-
-  
-
 
   let showAllDecks;
   if (deckIdx != -1) {
@@ -55,3 +49,4 @@ export default function Deck({ category, currentUser, users }) {
     </div>
   );
 }
+
