@@ -1,12 +1,7 @@
-import "bootstrap/dist/css/bootstrap.css"
-import "bootstrap/dist/js/bootstrap.bundle"
-import { Link } from "react-router-dom"
-import { Card, Button, Container, Row, Col } from "react-bootstrap"
 import "../layout/About.css"
 import { FaGithub, FaLinkedin } from "react-icons/fa"
-import React from "react"
 
-export default function About() {
+export default function Contact() {
   return (
     <>
       <div className="main-title">
@@ -18,84 +13,64 @@ export default function About() {
       </div>
 
       <h4 className="team-title">Meet the jamelCase 🐫 Team!</h4>
-      <Container>
-        <Row>
-          <Col
-            style={{
-              display: "flex",
-              flexDirection: "row",
-              flexWrap: "wrap",
-              justifyContent: "center",
-              gap: "15px",
-            }}
-          >
-            <Card style={{ width: "18rem" }}>
-              <Card.Img variant="top" src="images/jamel.jpg" />
-              <Card.Body>
-                <Card.Title>Jamel Scott Fadel</Card.Title>
-                <Card.Text>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-                  incididunt ut labore et dolore magna aliqua.
-                </Card.Text>
-                <a href="https://github.com/Jamelscott" target="_blank">
-                  <FaGithub />
-                </a>
-                <a href="https://www.linkedin.com/in/jamelfadel/" target="_blank">
-                  <FaLinkedin />
-                </a>
-              </Card.Body>
-            </Card>
-            <Card style={{ width: "18rem" }}>
-              <Card.Img variant="top" src="images/sol.jpg" />
-              <Card.Body>
-                <Card.Title>Sol Youn</Card.Title>
-                <Card.Text>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-                  incididunt ut labore et dolore magna aliqua.
-                </Card.Text>
-                <a href="https://github.com/Luflos" target="_blank">
-                  <FaGithub />
-                </a>
-                <a href="https://www.linkedin.com/in/sol-youn/" target="_blank">
-                  <FaLinkedin />
-                </a>
-              </Card.Body>
-            </Card>
-            <Card style={{ width: "18rem" }}>
-              <Card.Img variant="top" src="images/gabe.jpg" />
-              <Card.Body>
-                <Card.Title>Gabe Guevara</Card.Title>
-                <Card.Text>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-                  incididunt ut labore et dolore magna aliqua.
-                </Card.Text>
-                <a href="https://github.com/gitgabrielguevara" target="_blank">
-                  <FaGithub />
-                </a>
-                <a href="https://www.linkedin.com/in/gabriel-guevara-fullstack/" target="_blank">
-                  <FaLinkedin />
-                </a>
-              </Card.Body>
-            </Card>
-            <Card style={{ width: "18rem" }}>
-              <Card.Img variant="top" src="images/brian.jpg" />
-              <Card.Body>
-                <Card.Title>Brian Lee</Card.Title>
-                <Card.Text>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-                  incididunt ut labore et dolore magna aliqua.
-                </Card.Text>
-                <a href="https://github.com/br1anlee" target="_blank">
-                  <FaGithub />
-                </a>
-                <a href="https://www.linkedin.com/in/brianjoonmolee/" target="_blank">
-                  <FaLinkedin />
-                </a>
-              </Card.Body>
-            </Card>
-          </Col>
-        </Row>
-      </Container>
+      <main className="cards team-title">
+        <article className="card">
+          <img src="images/jamel.jpg" alt="Photo of Jamel" />
+          <div className="text">
+            <h3>Jamel Scott Fadel</h3>
+            <p>Doesn't ever starve</p>
+            <a href="https://github.com/Jamelscott" target="_blank">
+              <FaGithub />
+            </a>
+            <a href="https://www.linkedin.com/in/jamelfadel/" target="_blank">
+              <FaLinkedin />
+            </a>
+          </div>
+        </article>
+        <article className="card">
+          <img src="images/sol.jpg" alt="Photo of Sol" />
+          <div className="text">
+            <h3>Sol Youn</h3>
+            <p>
+              Trying hard to find the Lost Arks
+            </p>
+            <a href="https://github.com/Luflos" target="_blank">
+              <FaGithub />
+            </a>
+            <a href="https://www.linkedin.com/in/sol-youn/" target="_blank">
+              <FaLinkedin />
+            </a>
+          </div>
+        </article>
+        <article className="card">
+          <img src="images/gabe.jpg" alt="Photo of Gabe" />
+          <div className="text">
+            <h3>Gabe Guevara</h3>
+            <p>Loves coding, family and lots of prayer they all stay together.</p>
+            <a href="https://github.com/gitgabrielguevara" target="_blank">
+              <FaGithub />
+            </a>
+            <a href="https://www.linkedin.com/in/gabriel-guevara-fullstack/" target="_blank">
+              <FaLinkedin />
+            </a>
+          </div>
+        </article>
+        <article className="card">
+          <img src="images/brian.jpg" alt="Photo of Brian" />
+          <div className="text">
+            <h3>Brian Lee</h3>
+            <p>
+              Needs to get gud
+            </p>
+            <a href="https://github.com/br1anlee" target="_blank">
+              <FaGithub />
+            </a>
+            <a href="https://www.linkedin.com/in/brianjoonmolee/" target="_blank">
+              <FaLinkedin />
+            </a>
+          </div>
+        </article>
+      </main>
     </>
   )
 }
