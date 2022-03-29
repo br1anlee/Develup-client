@@ -15,8 +15,9 @@ import Error from './components/pages/Error'
 import Decks from './components/pages/Decks'
 import Navbar from './components/layout/Navbar'
 import About from './components/pages/About'
-import axios from 'axios';
 import Create from './components/pages/Create'
+import Cards from './components/pages/Cards'
+import axios from 'axios';
 
 function App() {
   // state with the user data when the user is logged in  
@@ -96,6 +97,11 @@ const handleLogout = () => {
           <Route 
             path="/create-deck"
             element={<Create currentUser={currentUser} setCategory={setCategory} category={category}/>}
+          />
+
+          <Route 
+            path='/category/:id/deck/:deckId'
+            element={<Cards category={category}/>}
           />
 
           {/* Path TO USER'S PROFILE */}
