@@ -20,14 +20,14 @@ export const SidebarData = [
   },
   {
     title: 'Create a deck',
-    path: 'category/create-deck',
+    path: '/create-deck',
     icon: <IoIcons.IoIosCreate />,
     cName: 'nav-text',
     background: '#5478AD'
   },
   {
     title: 'About',
-    path: '/about',
+    path: '/',
     icon: <BsIcons.BsInfoSquare />,
     cName: 'nav-text',
     background: '#4B5869'

@@ -15,6 +15,7 @@ import Error from './components/pages/Error'
 import Decks from './components/pages/Decks'
 import Navbar from './components/layout/Navbar'
 import About from './components/pages/About'
+import Create from './components/pages/Create'
 import axios from 'axios';
 
 
@@ -58,9 +59,8 @@ const handleLogout = () => {
 }
   return (
     <Router>
-      <Navbar currentUser={currentUser} handleLogout={handleLogout}/>
       <div>
-        <Navbar currentUser={currentUser}/>
+        <Navbar currentUser={currentUser} handleLogout={handleLogout}/>
         <Routes>
           {/* PATH to landing page (Landing page will be the login page) */}
 
@@ -85,7 +85,12 @@ const handleLogout = () => {
             path='/category'
             element={<Category category={category}/>}
           />
-
+          {/* Path to Create Decks */}
+          <Route 
+            path="/create-deck"
+            element={<Create currentUser={currentUser}/>}
+          />
+          {/* Path to Specific Deck */}
           <Route 
             path='/category/:id'
             element={<Decks category={category}/> }
@@ -94,9 +99,14 @@ const handleLogout = () => {
           {/* Path TO USER'S PROFILE */}
           <Route 
             path="/profile"
-            element={<Profile/>}
+            element={<Profile currentUser={currentUser}/>}
           />
-
+          {/* Path to home / about page */}
+          <Route 
+            path="/"
+            element={<About />}
+          />
+          {/* 404 page */}
           <Route 
             path="*"
             element={<Error />}
