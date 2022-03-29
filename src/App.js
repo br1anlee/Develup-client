@@ -22,7 +22,7 @@ function App() {
   // state with the user data when the user is logged in  
   // useState is null because there is no logged in user yet.
 const [currentUser, setCurrentUser] = useState(null)
-
+const [users, setUsers] = useState('')
 const [category, setCategory] = useState([])
 
 // useEffect to get all of the categories from the backend
@@ -36,8 +36,6 @@ useEffect(() => {
     })
 }, [])
 
-
-
   // useEffect that handles localstorage if the user navigates away from the page or refreshes
 useEffect(() => {
   const token = localStorage.getItem('jwt')
@@ -47,6 +45,11 @@ if (token) {
 } else {
   setCurrentUser(null)
 }
+axios.get(`${process.env.REACT_APP_SERVER_URL}/api-v1/users/`)
+  .then(response => {
+    setUsers(response.data)
+  })
+  .catch(console.log)
 }, [])
 
 //Logout handler function that deletes a token from the localstorage
@@ -60,13 +63,12 @@ const handleLogout = () => {
     <Router>
       <Navbar currentUser={currentUser} handleLogout={handleLogout}/>
       <div>
-        <Navbar currentUser={currentUser}/>
         <Routes>
           {/* PATH to landing page (Landing page will be the login page) */}
 
           <Route 
             path="/"
-            element={<About />}
+            element={<About handleLogout={handleLogout} />}
           />
 
           <Route 
@@ -94,7 +96,7 @@ const handleLogout = () => {
           {/* Path TO USER'S PROFILE */}
           <Route 
             path="/profile"
-            element={<Profile/>}
+            element={<Profile currentUser={currentUser} setUsers={setUsers} users={users}/>}
           />
 
           <Route 
