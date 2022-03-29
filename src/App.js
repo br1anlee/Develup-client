@@ -19,7 +19,6 @@ import Create from './components/pages/Create'
 import Cards from './components/pages/Cards'
 import axios from 'axios';
 
-
 function App() {
   // state with the user data when the user is logged in  
   // useState is null because there is no logged in user yet.
@@ -63,7 +62,7 @@ const handleLogout = () => {
 }
   return (
     <Router>
-     <Navbar currentUser={currentUser} handleLogout={handleLogout}/>
+      <Navbar currentUser={currentUser} handleLogout={handleLogout}/>
       <div>
         <Routes>
           {/* PATH to landing page (Landing page will be the login page) */}
@@ -87,19 +86,17 @@ const handleLogout = () => {
           {/* Path TO CATEGORIES */}
           <Route 
             path='/category'
-            element={<Category category={category}/>}
+            element={currentUser ? <Category category={category} /> : <Navigate to="/login" />}
           />
 
-          {/* Path to Create Decks */}
-          <Route 
-            path="/create-deck"
-            element={<Create currentUser={currentUser}/>}
-          />
-
-          {/* Path to Specific Deck */}
           <Route 
             path='/category/:id'
-            element={<Decks category={category}/> }
+            element={currentUser ? <Decks category={category}/> : <Navigate to="/login" />}
+          />
+
+          <Route 
+            path="/create-deck"
+            element={<Create currentUser={currentUser} setCategory={setCategory} category={category}/>}
           />
 
           <Route 
@@ -110,16 +107,9 @@ const handleLogout = () => {
           {/* Path TO USER'S PROFILE */}
           <Route 
             path="/profile"
-            element={<Profile currentUser={currentUser} setUsers={setUsers} users={users}/>}
+            element={currentUser ? <Profile  currentUser={currentUser} setUsers={setUsers} users={users} /> : <Navigate to="/login" />}
           />
 
-          {/* Path to home / about page */}
-          <Route 
-            path="/"
-            element={<About />}
-          />
-              
-          {/* 404 page */}
           <Route 
             path="*"
             element={<Error />}

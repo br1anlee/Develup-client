@@ -1,6 +1,5 @@
 import { Link } from "react-router-dom";
 
-
 export default function Category({ category }) {
   const categoryLinks = category.map((category, i) => {
     return (

@@ -3,6 +3,7 @@ import React from 'react';
 import * as FaIcons from 'react-icons/fa';
 import * as AiIcons from 'react-icons/ai';
 import * as MdIcons from 'react-icons/md';
+import * as IoIcons from 'react-icons/io';
 import { Link } from 'react-router-dom';
 import { useState } from 'react';
 import { SidebarData } from './SidebarData';
@@ -25,7 +26,7 @@ function Navbar({ currentUser, handleLogout }) {
       >
         <Link to="/">
           <AiIcons.AiOutlineLogout />
-          <span onClick={handleLogout}>log out</span>
+          <span onClick={handleLogout}>Logout</span>
         </Link>
       </li>
     </>
@@ -41,7 +42,17 @@ function Navbar({ currentUser, handleLogout }) {
       >
         <Link to="/login">
           <AiIcons.AiOutlineLogout />
-          <span>log in</span>
+          <span>Login</span>
+        </Link>
+      </li>
+      <li
+        key={'navbar-lasting'}
+        style={{ backgroundColor: '#4B5869' }}
+        className={'nav-text'}
+        >
+      <Link to="/signup">
+      <IoIcons.IoIosArrowUp />
+          <span>Sign Up</span>
         </Link>
       </li>
     </>
