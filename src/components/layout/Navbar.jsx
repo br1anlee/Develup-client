@@ -8,7 +8,7 @@ import { SidebarData, sideBarDataBottom } from './SidebarData';
 // import { IconContext } from 'react-icons';
 import './navbar.css';
 
-function Navbar({ currentUser }) {
+function Navbar({ currentUser, handleLogout }) {
   const [sidebar, setsidebar] = useState(false);
 
   const showSidebar = () => {
