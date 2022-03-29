@@ -26,6 +26,7 @@ export default function Login({currentUser, setCurrentUser}) {
             localStorage.setItem('jwt', token)
 
             // set the state to the logged in user
+            console.log(decoded)
             setCurrentUser(decoded)
         } catch (err) {
             // handle errors such as wrong credentials
@@ -41,7 +42,7 @@ export default function Login({currentUser, setCurrentUser}) {
     if (currentUser) return <Navigate to="/category"/>
     return (
         <div>
-            <h1>Sign In</h1>
+            <h1>Log in</h1>
 
             <h5>{msg ? `${msg}` : ''}</h5>
             <form onSubmit={handleFormSubmit}>

@@ -20,7 +20,7 @@ export const SidebarData = [
   },
   {
     title: 'Create a deck',
-    path: 'category/create-deck',
+    path: '/create-deck',
     icon: <IoIcons.IoIosCreate />,
     cName: 'nav-text',
     background: '#5478AD'
