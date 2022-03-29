@@ -18,7 +18,6 @@ import About from './components/pages/About'
 import axios from 'axios';
 import Create from './components/pages/Create'
 
-
 function App() {
   // state with the user data when the user is logged in  
   // useState is null because there is no logged in user yet.

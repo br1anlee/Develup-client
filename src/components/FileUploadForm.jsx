@@ -31,11 +31,12 @@ export default function FileUploadForm ({ currentUser, users, setDisplayImg}) {
     }
     return (
         <>
-            <h4>Upload an Avatar</h4>
+            <br></br>
+            <h5>Upload an Avatar</h5>
             <form onSubmit={handleSubmit} encType='multipart/form'>
-                <label htmlFor="image">Upload your profile picture: </label>
+                <label htmlFor="image"></label>
                 <input type="file" name="image" id="image" onChange={e => setFormImg(e.target.files[0])}/>
-
+                <br></br>
                 <input type="submit"/>
             </form>
         </>
