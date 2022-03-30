@@ -38,17 +38,33 @@ export default function Profile({currentUser, users}) {
           })
       }, [])
 
+      console.log(displayImg)
+    
     return (
         <div className="center">
           <h1>DevelUp Profile</h1>
-            {
+          {displayImg === `https://res.cloudinary.com/solful/image/upload/c_thumb,g_face,h_300,w_300/undefined.png` ? 'No Profile Picture'
+             : displayImg
+             &&
+             <img 
+             src={displayImg}
+             alt="Profile picture"
+             />}
+
+
+
+
+
+
+
+            {/* {
               displayImg
               &&
               <img 
               src={displayImg}
               alt="Profile picture"
               />
-            }
+            } */}
             <h3>{currentUser.name} | {currentUser.email}</h3>
             <FileUploadForm currentUser={currentUser} setDisplayImg={setDisplayImg} users={users}/>
             

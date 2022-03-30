@@ -1,61 +1,91 @@
-body {
-    font-family: Poppins;
-    background: #E5E5E5
-  }
+* {
+  font-family: Poppins;
+  padding: 0px;
+  margin: 0px;
+}
 
 .container {
-    margin-top: 50px;
+    text-align: center;
+    padding-top: 2rem;
 }
 
 .title-Main {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  padding: 2rem;
+  background-color: rgba(235,235,235);
+  width: 426.71px;
+  height: 99.8px;
+  top: 109px;
+  left: 427px;
+  margin: auto;
+  border: 2.35753px solid #283342;
 }
 
 .title-Container {
-    display: inline;
-    border: 2.36px, solid, black;
-    order: 2;
+  display: inline;
+  border: 2.36px, solid, black;
+  order: 2;
 }
 
 .image-Container {
-    padding-right: 10px;
+  padding-right: 10px;
 }
-.form-Container {
+
+.formContainer {
+    background-color: rgba(36,45,58);
+    width: 426.71px;
+    height: 200px;
+    top: 109px;
+    left: 427px;
     margin: auto;
-    width: 50%;
-    padding: 10px;
-    border: 1px solid black;
-    background-color: rgba(40, 51, 66, 1);
     color: white;
+    border: 2.35753px solid #283342;
 }
-
-.sign-in {
-    text-align: center;
-}
-
-
-.form-group::placeholder {
+.error-msg {
     color: red;
 }
 
-.btn {
-    justify-content: center;
+.emailInput {
+    width: 200.28px;
+    height: 25.08px;
+    left: 442.72px;
+    top: 298px;
+    background: linear-gradient(0deg, #EEEEEE, #EEEEEE), #C4C4C4;
+    border: 0.785844px solid #000000;
+    box-sizing: border-box;
+    box-shadow: inset 0px 3.14338px 3.14338px rgba(0, 0, 0, 0.25);
+    margin: 10px;
+    }
+
+.passwordInput {
+    width: 200.28px;
+    height: 25.08px;
+    left: 442.72px;
+    top: 298px;
+    background: linear-gradient(0deg, #EEEEEE, #EEEEEE), #C4C4C4;
+    border: 0.785844px solid #000000;
+    box-sizing: border-box;
+    box-shadow: inset 0px 3.14338px 3.14338px rgba(0, 0, 0, 0.25);
 }
 
-img {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
+.enterButton {
+    width: 100.88px;
+    height: 20.5px;
+    left: 581px;
+    top: 456px;
+    background: #C4C4C4;
+    border: 0.785844px solid #000000;
+    box-sizing: border-box;
+    border-radius: 5.50091px;
+    margin-top: 10px;
 }
 
-.a-tag:link, .a-tag:visited {
+.a-tag {
     color: white;
-    text-decoration: none;
 }
 
-.a-tag:active, .a-tag:hover {
+.a-tag:link{
     color: white;
-    text-decoration: underline;
 }
