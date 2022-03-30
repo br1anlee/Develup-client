@@ -9,10 +9,11 @@ export default function Deck({ category, currentUser, users }) {
   const { id } = useParams()
 
   let deckIdx = category.findIndex((object) => {
-    return object._id === id
-  })
+    return object._id === id;
+  });
 
   const [currentCategory, setCurrentCategory] = useState(category[deckIdx])
+
 
   let showAllDecks
   if (deckIdx != -1) {
