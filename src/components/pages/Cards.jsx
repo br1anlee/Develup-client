@@ -32,9 +32,9 @@ export default function Cards({ category }) {
   if (deckIdx != -1) {
     showAllCards = currentDeck.decks[deckIdx].cards.map((card, i) => {
       return (
-        <div key={`card-${i}`} onClick={() => setFlip(!flip)}>
-            <p>Question: {card.question}</p>
-           {flip ? <p>Answer: </p> : <p>Answer: {card.answer}</p>}
+        <div key={`card-${i}`} >
+          <p>Question: {card.question}</p>
+          <p>Answer: {card.answer}</p>
         </div>
       )
     })

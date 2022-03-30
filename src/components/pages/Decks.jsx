@@ -62,15 +62,13 @@ export default function Deck({ category, currentUser, users, setCategory }) {
       })
 
       return (
-        <Link key={`link-link${i}`} to={`/category/${id}/deck/${deck._id}`}>
+        <Link key={`link-link${i}`} to={`/category/${id}/deck/${deck._id}`} style={{textDecoration: 'none'}}>
           <div className="deck-div" key={`category-link${i}`}>
             <p key={`deckName-link${i}`} className="category-text">
               {deck.deckName}
             </p>
 
             <p className="category-text-small">{deck.cards.length} Cards</p>
-            <input type="submit" value="" onClick={handleEditClick}/>
-            <button onClick={handleDeleteClick}>Delete</button>
             <p className="category-text-small">Author: {users[userIdx]?.name}</p>
           </div>
         </Link>

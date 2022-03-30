@@ -27,7 +27,6 @@ const [users, setUsers] = useState('')
 const [category, setCategory] = useState([])
 const [authors, setAuthors] = useState([])
 
-console.log(currentUser)
 // useEffect to get all of the categories from the backend
 useEffect(() => {
   axios.get(process.env.REACT_APP_SERVER_URL + "/api-v1/category")
