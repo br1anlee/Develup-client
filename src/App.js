@@ -113,7 +113,7 @@ const handleLogout = () => {
           {/* Path TO USER'S PROFILE */}
           <Route 
             path="/profile"
-            element={currentUser ? <Profile  currentUser={currentUser} setUsers={setUsers} users={users} /> : <Navigate to="/" />}
+            element={currentUser ? <Profile  currentUser={currentUser} setUsers={setUsers} users={users} category={category} setCategory={setCategory} /> : <Navigate to="/" />}
           />
 
           <Route 
