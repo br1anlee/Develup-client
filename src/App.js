@@ -27,7 +27,6 @@ const [users, setUsers] = useState('')
 const [category, setCategory] = useState([])
 const [authors, setAuthors] = useState([])
 
-
 // useEffect to get all of the categories from the backend
 useEffect(() => {
   axios.get(process.env.REACT_APP_SERVER_URL + "/api-v1/category")
@@ -95,25 +94,23 @@ const handleLogout = () => {
             element={currentUser ? <Create currentUser={currentUser} setCategory={setCategory} category={category}/> : <Navigate to="/" />}
           />
 
+          {/* Path to DECK */}
           <Route 
             path='/category/:id/'
-            element={currentUser ? <Decks category={category} currentUser={currentUser} users={users}/>: <Navigate to="/" /> }
+            element={currentUser ? <Decks category={category} setCategory={setCategory} currentUser={currentUser} users={users}/>: <Navigate to="/" /> }
           />
-
+          
+          {/* Path to CARDS */}
           <Route 
             path='/category/:id/deck/:deckId'
-            element={currentUser ? <Cards category={category} />: <Navigate to="/" /> }
+            element={currentUser ? <Cards category={category} setCategory={setCategory}/>: <Navigate to="/" /> }
           />
 
-          <Route 
-            path='/category/:id/deck/:deckId'
-            element={currentUser ? <Cards category={category} />: <Navigate to="/login" /> }
-          />
 
           {/* Path TO USER'S PROFILE */}
           <Route 
             path="/profile"
-            element={currentUser ? <Profile  currentUser={currentUser} setUsers={setUsers} users={users} /> : <Navigate to="/" />}
+            element={currentUser ? <Profile  currentUser={currentUser} setUsers={setUsers} users={users} category={category} setCategory={setCategory} /> : <Navigate to="/" />}
           />
 
           <Route 
