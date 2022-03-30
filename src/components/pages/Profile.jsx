@@ -31,7 +31,7 @@ export default function Profile({currentUser, users}) {
         axios.get(`${process.env.REACT_APP_SERVER_URL}/api-v1/users/${currentUser.id}`)
           .then((response) => {
             //   console.log(response.data)
-            setDisplayImg(`https://res.cloudinary.com/solful/image/upload/c_thumb,g_face,h_200,w_200/${response.data.avatar}.png`)
+            setDisplayImg(`https://res.cloudinary.com/solful/image/upload/c_thumb,g_face,h_300,w_300/${response.data.avatar}.png`)
           })
           .catch((err) => {
             console.log(err)

@@ -100,12 +100,12 @@ function Create({ currentUser, setCategory, category }) {
             />
             <br></br>
 
-            <label htmlFor="card">Card 1 - Question</label>
+            <label htmlFor="card-question">Card 1 - Question</label>
             <input
               required
               type="text"
               placeholder="Question.."
-              id="card"
+              id="card-question"
               name="question"
               value={currentCards.question}
               onChange={(e) =>

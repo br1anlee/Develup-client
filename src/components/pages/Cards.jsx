@@ -22,8 +22,8 @@ export default function Cards({ category }) {
     showAllCards = currentDeck.decks[deckIdx].cards.map((card, i) => {
       return (
         <div key={`card-${i}`}>
-          <p>{card.question}</p>
-          <p>{card.answer}</p>
+          <p>Question: {card.question}</p>
+          <p>Answer: {card.answer}</p>
         </div>
       )
     })
