@@ -33,7 +33,7 @@ function Create({ currentUser, setCategory, category }) {
         console.log(form)
 
         const response = await axios.post(`http://localhost:2996/api-v1/category`, form)
-      
+
         console.log(response);
 
         setCategory(category);
