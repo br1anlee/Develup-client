@@ -38,16 +38,7 @@ useEffect(() => {
       console.log(err)
     })
 }, [])
-// useEffect(() => {
-  //   axios.get(process.env.REACT_APP_SERVER_URL + "/api-v1/user")
-  //     .then((response) => {
-    //       setAuthors(response.data)
-    //     })
-    //     .catch((err) => {
-      //       console.log(err)
-      //     })
-      // }, [])
-      
+
   // useEffect that handles localstorage if the user navigates away from the page or refreshes
   useEffect(() => {
     const token = localStorage.getItem('jwt')
