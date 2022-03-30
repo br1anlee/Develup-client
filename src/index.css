@@ -79,3 +79,9 @@ code {
 .center {
   text-align: center;
 }
+
+
+
+.selectDifferentName {
+  color: red;
+}
