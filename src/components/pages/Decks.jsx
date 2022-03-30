@@ -1,98 +1,71 @@
 import { useParams, Link } from "react-router-dom"
-import { useState, useEffect } from "react"
+import { useState } from "react"
 import { FaDrumstickBite } from "react-icons/fa"
 import EditDeck from "./EditDeck"
 import Category from "./Category"
-import axios from "axios"
 // import {useState} from 'react'
 
-export default function Deck({ category, currentUser, users, setCategory }) {
+export default function Deck({ category, currentUser, users }) {
   const { id } = useParams()
-  const [showForm, setShowForm] = useState(false)
-  const [deck, setDeck] = useState([])
-  const [cards, setCards] = useState([])
 
-
-
-  // check if category exists  (optional chaining)
-  let deckIdx = category && category.findIndex((object) => {
+  let deckIdx = category.findIndex((object) => {
     return object._id === id;
   });
 
-  // const [currentCategory, setCurrentCategory] = useState(category[deckIdx])
+  const [editCategory, setEditCategory] = useState()
 
 
-  // const refreshDecks = () => {axios.get(process.env.REACT_APP_SERVER_URL + "/api-v1/category/:id")
-  //     .then((response) => {
-  //       setCategory(response.data)
-  //     })
-  //     .catch((err) => {
-  //       console.log(err)
-  //     })
-  //   }
 
-  // This is for Delete
-//   const editCard = () => {
-
-//     let editedDeck = {
-//   ...currentCategory,
-//   decks: [],
-// }
-// setCurrentCategory(editedDeck)
-// };
-
-  const handleEditClick = (e) => {
-    e.preventDefault()
-    setCategory(prevState => {
-      prevState[deckIdx].decks[deckIdx].deckName = "Hello"
-      return prevState[deckIdx]
-    })
-  }
-
-  const handleDeleteClick = (e) => {
-    e.preventDefault()
-    console.log('delete button click!')
+  const handleEditState = ()=>{
+  
+   
 
   }
-  useEffect(() => {
-    console.log(category)
-  },[category])
+
 
   let showAllDecks
   if (deckIdx != -1) {
     showAllDecks = category[deckIdx].decks.map((deck, i) => {
-      let userIdx = users && users.findIndex((object) => {
+      let userIdx = users.findIndex((object) => {
         return object._id === deck.author
       })
 
       return (
-        <Link key={`link-link${i}`} to={`/category/${id}/deck/${deck._id}`} style={{textDecoration: 'none'}}>
-          <div className="deck-div" key={`category-link${i}`}>
+        <>
+          <div className="deck-div" key={`category-link${i}`} style={{textDecoration: 'none'}}>
+        <Link key={`link-link${i}`} to={`/category/${id}/deck/${deck._id}`}>
+            <div key={`deckName-Div-link${i}`}>
             <p key={`deckName-link${i}`} className="category-text">
               {deck.deckName}
             </p>
 
             <p className="category-text-small">{deck.cards.length} Cards</p>
-            <p className="category-text-small">Author: {users[userIdx]?.name}</p>
-          </div>
+            <p className="category-text-small">Author: {users[userIdx].name}</p>
+
+            </div>
         </Link>
+            <div>
+              <form action="">
+              <label hidden htmlFor="edit"></label>
+              <button onClick={handleEditState}>Edit</button>
+              <label hidden htmlFor="delete"></label>
+              <button>Delete</button>
+              </form>
+            </div>
+          </div>
+          {/* {currentUser.id === deck.author ? <EditDeck deck={deck} currentCategory={currentCategory}></EditDeck> : <></>} */}
+        </>
       )
     })
   }
-  if (category.length) {
-      return (
-        <>
-          {currentUser ? (
-            <div style={{ textAlign: "center" }}>
-              <h1>{category[deckIdx].name} Decks</h1>
-              <div className="category-container">{showAllDecks}</div>
-            </div>
-          ): null}
-        </>
-      )
-  } return (
-    <div>
-      Nothing to Load
+
+  return (
+    <div style={{ textAlign: "center" }}>
+      <h1>{category[deckIdx].name} Decks</h1>
+      <div className="category-container">{showAllDecks}</div>
+      <form action="">
+        
+      </form>
     </div>
   )
 }
