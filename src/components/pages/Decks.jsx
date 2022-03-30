@@ -3,10 +3,15 @@ import { useState, useEffect } from "react"
 import { FaDrumstickBite } from "react-icons/fa"
 import EditDeck from "./EditDeck"
 import Category from "./Category"
+import axios from "axios"
 // import {useState} from 'react'
 
 export default function Deck({ category, currentUser, users, setCategory }) {
   const { id } = useParams()
+  const [showForm, setShowForm] = useState(false)
+  const [deck, setDeck] = useState([])
+  const [cards, setCards] = useState([])
+
 
 
   // check if category exists  (optional chaining)
@@ -14,8 +19,7 @@ export default function Deck({ category, currentUser, users, setCategory }) {
     return object._id === id;
   });
 
-  const [currentCategory, setCurrentCategory] = useState(category[deckIdx])
-
+  // const [currentCategory, setCurrentCategory] = useState(category[deckIdx])
 
 
   // const refreshDecks = () => {axios.get(process.env.REACT_APP_SERVER_URL + "/api-v1/category/:id")

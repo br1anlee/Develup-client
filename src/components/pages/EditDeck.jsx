@@ -1,31 +1,34 @@
 import { Navigate } from "react-router-dom";
 import { useState } from "react";
+import axios from "axios";
 
-function EditDeck(props) {
+function EditDeck({decksId, categoryId, category, setShowForm, showForm}) {
+const [editForm, setEditForm] = useState(category)
 
-
-    const [edit, setEdit] = useState(true)
-
-    const handleOnClick=()=>{
-
-        // console.log(edit)
-        setEdit(!edit)
-        // axios.put(process.env.REACT_APP_SERVER_URL + "/api-v1/category/:categoryId/deck/:deckId")
-        //     .then((response) => {
-                
-        //     })
-        
+    const handleOnClick=(e)=>{
+        e.preventDefault()
+        axios
+        .put(`${process.env.REACT_APP_SERVER_URL}/api-v1/category/${categoryId}/deck/${decksId}`, editForm)
+        .then((response) => {
+            console.log(response.data)
+            setShowForm(!showForm)
+        })
+        .catch(console.log)
     }
-
 
     return ( 
         <>
-        <button type="submit" onClick={handleOnClick}>Edit</button>
-        {edit === true ? 
-        <form>
-            <label htmlFor=""></label>
-            <input type="text"></input>
-        </form> : <p></p>}
+            <h1>Edit the Deck</h1>
+            <form onSubmit={handleOnClick}>
+                <label htmlFor="deckName">Deck's Name</label>
+                <input
+                    type='text'
+                    value={editForm.name}
+                    onChange={(e) => setEditForm({...editForm, deckName:e.target.value})}
+                    id='deckName'
+                />
+                <input type='submit' />
+            </form>
 
         </>
      );
