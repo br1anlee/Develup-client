@@ -1,19 +1,23 @@
 import { useParams, Link } from "react-router-dom"
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import { FaDrumstickBite } from "react-icons/fa"
 import EditDeck from "./EditDeck"
 import Category from "./Category"
+import axios from "axios"
 // import {useState} from 'react'
 
 export default function Deck({ category, currentUser, users }) {
   const { id } = useParams()
+  const [showForm, setShowForm] = useState(false)
+  const [deck, setDeck] = useState([])
+  const [cards, setCards] = useState([])
+
 
   let deckIdx = category.findIndex((object) => {
     return object._id === id;
   });
 
-  const [currentCategory, setCurrentCategory] = useState(category[deckIdx])
-
+  // const [currentCategory, setCurrentCategory] = useState(category[deckIdx])
 
   let showAllDecks
   if (deckIdx != -1) {
