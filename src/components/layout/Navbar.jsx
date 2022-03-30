@@ -30,7 +30,7 @@ function Navbar({ currentUser, handleLogout }) {
   const loggedOut = (
     <>
       <li key={"navbar-last"} style={{ backgroundColor: "#4B5869" }} className={"nav-text"}>
-        <Link to="/login">
+        <Link to="/">
           <AiIcons.AiOutlineLogout />
           <span>Login</span>
         </Link>
