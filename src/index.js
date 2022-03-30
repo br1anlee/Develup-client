@@ -3,6 +3,10 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+<<<<<<< HEAD
+=======
+
+>>>>>>> 35b266d (removed bootstrap because it was causing problems)
 
 ReactDOM.render(
   <React.StrictMode>
