@@ -21,7 +21,7 @@ export default function FileUploadForm ({ currentUser, users, setDisplayImg}) {
                 return user._id === currentUser.id
             })
 
-            setDisplayImg(`https://res.cloudinary.com/solful/image/upload/c_thumb,g_face,h_200,w_200/${foundUser.avatar}.png`)
+            setDisplayImg(`https://res.cloudinary.com/solful/image/upload/c_thumb,g_face,h_300,w_300/${foundUser.avatar}.png`)
 
         } catch (err) {
             console.log(err)
