@@ -34,8 +34,19 @@ export default function Cards({ category, setCategory }) {
   let categoryIdx = category.findIndex((object) => {
     return object._id === id
   })
-
   const currentDeck = category[categoryIdx]
+  const [showForm, setShowForm] = useState(false)
+
+  const [flip,setFlip] = useState(false)
+
+//   const refreshCards = () => {axios.get(process.env.REACT_APP_SERVER_URL + "/api-v1/category")
+//       .then((response) => {
+//         setCategory(response.data)
+//       })
+//       .catch((err) => {
+//         console.log(err)
+//       })
+//     }
 
   // let categoryId = currentDeck._id
   // console.log(categoryId)
@@ -55,7 +66,7 @@ export default function Cards({ category, setCategory }) {
   if (deckIdx != -1) {
     showAllCards = currentDeck.decks[deckIdx].cards.map((card, i) => {
       return (
-        <div key={`card-${i}`}>
+        <div key={`card-${i}`} >
           <p>Question: {card.question}</p>
           <p>Answer: {card.answer}</p>
         </div>
@@ -83,5 +94,6 @@ export default function Cards({ category, setCategory }) {
         { showAllCards }
       )} */}
     </>
+
   )
 }
