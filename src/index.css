@@ -76,7 +76,13 @@ code {
   text-shadow: 0 0 2px black, 0 0 2px black, 0 0 2px black, 0 0 2px black;
   font-weight: 500;
   font-size: 13px;
+  text-decoration: none;
 }
 .center {
   text-align: center;
 }
+
+.selectDifferentName {
+  color: red;
+}
+

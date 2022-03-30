@@ -32,7 +32,7 @@ export default function Deck({ category, currentUser, users }) {
 
       return (
         <>
-          <div className="deck-div" key={`category-link${i}`}>
+          <div className="deck-div" key={`category-link${i}`} style={{textDecoration: 'none'}}>
         <Link key={`link-link${i}`} to={`/category/${id}/deck/${deck._id}`}>
             <div key={`deckName-Div-link${i}`}>
             <p key={`deckName-link${i}`} className="category-text">

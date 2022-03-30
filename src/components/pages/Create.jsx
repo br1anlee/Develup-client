@@ -1,11 +1,11 @@
-import { useState} from 'react';
+import { useState, useEffect} from 'react';
 import axios from 'axios';
 import VisibleCards from './VisibleCards';
-import { Navigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 function Create({ currentUser, setCategory, category }) {
   const [msg, setMsg] = useState("")
-  const [cards, setCards] = useState([]);
+  const [cards, setCards] = useState([{question: '', answer:''}]);
 
   const [form, setForm] = useState({
     name: '',
@@ -14,16 +14,28 @@ function Create({ currentUser, setCategory, category }) {
     cards: []
   });
 
+  
+    const refreshCategory = () => {axios.get(process.env.REACT_APP_SERVER_URL + "/api-v1/category")
+      .then((response) => {
+        setCategory(response.data)
+      })
+      .catch((err) => {
+        console.log(err)
+      })
+    }
+  
 
   const [currentCards, setCurrentCards] = useState([]);
 
   const handleNewCards = (e) => {
 
-    
     setForm({...form,  cards: [...form.cards, {question: currentCards.question, answer: currentCards.answer}]})
     setCurrentCards([]);
+    
   };
 
+
+const navigate = useNavigate()
 
   const submitDeck = async (e)=>{
       e.preventDefault()
@@ -33,12 +45,14 @@ function Create({ currentUser, setCategory, category }) {
         console.log(form)
 
         const response = await axios.post(`http://localhost:2996/api-v1/category`, form)
-      
+
         console.log(response);
 
         setCategory(category);
 
+        refreshCategory()
 
+        navigate("/category");
 
 
       } catch(err){
@@ -47,11 +61,11 @@ function Create({ currentUser, setCategory, category }) {
       }
   }
 
-  <Navigate to="/category"/>;
+
   
   return (
     <>
-    {msg ? <h1>Select a different deck name</h1> : <></>}
+    {msg ? <h1 className="selectDifferentName">Select a different deck name</h1> : <></>}
       <h2>
         <div>
           <form onSubmit={submitDeck}>
