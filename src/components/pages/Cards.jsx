@@ -67,7 +67,7 @@ export default function Cards({ category, setCategory }) {
     <>
       <div className="center">
         <h1>Deck Name: {deckName}</h1>
-        {showAllCards}
+        {showAllCards} 
         <EditDeck categoryId={categoryId} decksId={decksId} category={category} />
         <button onClick={handleSubmit}>Delete Deck</button>
       </div>
