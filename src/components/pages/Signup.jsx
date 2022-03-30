@@ -3,6 +3,7 @@ import axios from 'axios'
 import jwt_decode from 'jwt-decode'
 import { Navigate } from 'react-router-dom'
 
+
 export default function Register({ currentUser, setCurrentUser }) {
   const [form, setForm] = useState({
     email: '',
@@ -42,12 +43,22 @@ export default function Register({ currentUser, setCurrentUser }) {
   if (currentUser) return <Navigate to="/category" />
 
   return (
-    <div>
-      <h3>Register Page</h3>
-
+    <div className="container">
+          <div className="title-Main">
+                <div className="image-Container">
+                    <img src="/logo.png"/>
+                </div>
+                <div className="title-Name">
+                    <h1>DevelUp +</h1>
+                </div>
+          </div>
+    <div className="form-Container">
+      <h1 className="sign-in">Register</h1>      
       <p>{msg}</p>
 
       <form onSubmit={handleSubmit}>
+
+        <div>
         <label htmlFor="email">Email:</label>
         <input 
           type="email"
@@ -55,7 +66,10 @@ export default function Register({ currentUser, setCurrentUser }) {
           value={form.email}
           onChange={e => setForm({ ...form, email: e.target.value })}
           placeholder='enter your email...'
-        />
+          />
+        </div>
+
+        <div>
         <label htmlFor="name">Name:</label>
         <input 
           type="text"
@@ -63,8 +77,10 @@ export default function Register({ currentUser, setCurrentUser }) {
           value={form.name}
           onChange={e => setForm({ ...form, name: e.target.value })}
           placeholder='enter your name...'
-        />
+          />
+        </div>
 
+        <div>
         <label htmlFor="password">Password:</label>
         <input 
           type="password"
@@ -72,8 +88,10 @@ export default function Register({ currentUser, setCurrentUser }) {
           value={form.password}
           onChange={e => setForm({ ...form, password: e.target.value })}
           placeholder='enter your password...'
-        />
-
+          />
+        </div>
+        
+        <div>
         <label htmlFor="passwordConfirmation">Confirmation:</label>
         <input 
           type="password"
@@ -81,10 +99,14 @@ export default function Register({ currentUser, setCurrentUser }) {
           value={form.passwordConfirmation}
           onChange={e => setForm({ ...form, passwordConfirmation: e.target.value })}
           placeholder='enter your confirmation...'
-        />
+          />
+        </div>
 
-        <input type="submit" />
+        <div className="center">
+          <input type="submit" />
+        </div>
       </form>
     </div>
+  </div>
   )
 }

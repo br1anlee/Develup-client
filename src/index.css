@@ -79,3 +79,10 @@ code {
 .center {
   text-align: center;
 }
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 15px;
+}
