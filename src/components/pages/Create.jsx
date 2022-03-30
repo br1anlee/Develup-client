@@ -4,26 +4,6 @@ import VisibleCards from './VisibleCards';
 import { Navigate } from 'react-router-dom';
 
 function Create({ currentUser, setCategory, category }) {
-  //   const handleSubmit = (e) => {
-
-  //     e.preventDefault()
-  //     axios
-  //     .post(`$process.env.REACT_APP_SERVER_URL)/deck`, form)
-  //     .then((response) => {
-  //       setForm({})
-  //       return axios.get(process.env.REACT_APP_SERVER_URL + "/deck")
-  //     })
-  //     .then(( response ) => setCategory(response.data))
-  //     .catch(err=>{
-  //         console.log(err)
-  //     })
-
-  //   }
-
-  //                 const handleAddCard = ()=>{
-
-  // }
-
   const [msg, setMsg] = useState("")
   const [cards, setCards] = useState([]);
 
@@ -58,7 +38,7 @@ function Create({ currentUser, setCategory, category }) {
 
         setCategory(category);
 
-        <Navigate to="/category"/>;
+
 
 
       } catch(err){
@@ -67,6 +47,8 @@ function Create({ currentUser, setCategory, category }) {
       }
   }
 
+  <Navigate to="/category"/>;
+  
   return (
     <>
     {msg ? <h1>Select a different deck name</h1> : <></>}

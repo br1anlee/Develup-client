@@ -38,16 +38,7 @@ useEffect(() => {
       console.log(err)
     })
 }, [])
-// useEffect(() => {
-  //   axios.get(process.env.REACT_APP_SERVER_URL + "/api-v1/user")
-  //     .then((response) => {
-    //       setAuthors(response.data)
-    //     })
-    //     .catch((err) => {
-      //       console.log(err)
-      //     })
-      // }, [])
-      
+
   // useEffect that handles localstorage if the user navigates away from the page or refreshes
   useEffect(() => {
     const token = localStorage.getItem('jwt')
@@ -78,12 +69,12 @@ const handleLogout = () => {
       <Routes>
           {/* PATH to landing page (Landing page will be the login page) */}
           <Route 
-            path="/"
-            element={<About />}
+            path="/about"
+            element={<About/>}
           />
 
           <Route 
-            path="/login"
+            path="/"
             element={<Login currentUser={currentUser} setCurrentUser={setCurrentUser}/>}
           />
 
@@ -96,17 +87,22 @@ const handleLogout = () => {
           {/* Path TO CATEGORIES */}
           <Route 
             path='/category'
-            element={currentUser ? <Category category={category} /> : <Navigate to="/login" />}
+            element={currentUser ? <Category category={category} /> : <Navigate to="/" />}
           />
 
           <Route 
             path="/create-deck"
-            element={currentUser ? <Create currentUser={currentUser} setCategory={setCategory} category={category}/> : <Navigate to="/login" />}
+            element={currentUser ? <Create currentUser={currentUser} setCategory={setCategory} category={category}/> : <Navigate to="/" />}
           />
 
           <Route 
             path='/category/:id/'
-            element={currentUser ? <Decks category={category} currentUser={currentUser} users={users}/>: <Navigate to="/login" /> }
+            element={currentUser ? <Decks category={category} currentUser={currentUser} users={users}/>: <Navigate to="/" /> }
+          />
+
+          <Route 
+            path='/category/:id/deck/:deckId'
+            element={currentUser ? <Cards category={category} />: <Navigate to="/" /> }
           />
 
           <Route 
@@ -117,7 +113,7 @@ const handleLogout = () => {
           {/* Path TO USER'S PROFILE */}
           <Route 
             path="/profile"
-            element={currentUser ? <Profile  currentUser={currentUser} setUsers={setUsers} users={users} /> : <Navigate to="/login" />}
+            element={currentUser ? <Profile  currentUser={currentUser} setUsers={setUsers} users={users} /> : <Navigate to="/" />}
           />
 
           <Route 

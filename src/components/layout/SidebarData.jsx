@@ -27,7 +27,7 @@ export const SidebarData = [
   },
   {
     title: 'About',
-    path: '/',
+    path: '/about',
     icon: <BsIcons.BsInfoSquare />,
     cName: 'nav-text',
     background: '#4B5869'
