@@ -74,9 +74,8 @@ const handleLogout = () => {
     <Router>
       <Navbar currentUser={currentUser} handleLogout={handleLogout}/>
       <div>
-        <Routes>
+      <Routes>
           {/* PATH to landing page (Landing page will be the login page) */}
-
           <Route 
             path="/"
             element={<About />}
@@ -100,20 +99,18 @@ const handleLogout = () => {
           />
 
           <Route 
-            path='/category/:id'
-            element={currentUser ? <Decks category={category}/> : <Navigate to="/login" />}
-          />
-
-          <Route 
             path="/create-deck"
             element={currentUser ? <Create currentUser={currentUser} setCategory={setCategory} category={category}/> : <Navigate to="/login" />}
           />
 
           <Route 
+            path='/category/:id/'
+            element={currentUser ? <Decks category={category} currentUser={currentUser} users={users}/>: <Navigate to="/login" /> }
+          />
 
+          <Route 
             path='/category/:id/deck/:deckId'
-            element={<Decks category={category} currentUser={currentUser} users={users}/> }
-
+            element={currentUser ? <Cards category={category} />: <Navigate to="/login" /> }
           />
 
           {/* Path TO USER'S PROFILE */}

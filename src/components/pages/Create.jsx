@@ -80,7 +80,7 @@ function Create({ currentUser, setCategory, category }) {
               required
               type="text"
               placeholder="category name.."
-              id="Cctegory-name"
+              id="category-name"
               value={form.categoryName}
               onChange={(e) =>
                 setForm({ ...form, name: e.target.value })
@@ -92,18 +92,18 @@ function Create({ currentUser, setCategory, category }) {
               required
               type="text"
               placeholder="deck name.."
-              id="category-name"
+              id="deck-name"
               value={form.deckName}
               onChange={(e) => setForm({ ...form, deckName: e.target.value })}
             />
             <br></br>
 
-            <label htmlFor="card name-question">Card 1 - Question</label>
+            <label htmlFor="card-question">Card 1 - Question</label>
             <input
               required
               type="text"
               placeholder="Question.."
-              id="card-1-question"
+              id="card-question"
               name="question"
               value={currentCards.question}
               onChange={(e) =>
@@ -111,7 +111,7 @@ function Create({ currentUser, setCategory, category }) {
               }
             />
             <br></br>
-              <label htmlFor="card name-1">Card 1 - Answer</label>
+              <label htmlFor="card-answer">Card 1 - Answer</label>
               <input
                 required
                 type="text"

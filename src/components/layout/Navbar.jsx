@@ -1,70 +1,65 @@
-import React from 'react';
-import * as FaIcons from 'react-icons/fa';
-import * as AiIcons from 'react-icons/ai';
-import * as MdIcons from 'react-icons/md';
-import { Link } from 'react-router-dom';
-import { useState } from 'react';
-import { SidebarData } from './SidebarData';
-import './navbar.css';
+import React from "react"
+import * as FaIcons from "react-icons/fa"
+import * as AiIcons from "react-icons/ai"
+import * as MdIcons from "react-icons/md"
+import * as IoIcons from 'react-icons/io';
+import { Link } from "react-router-dom"
+import { useState } from "react"
+import { SidebarData } from "./SidebarData"
+import "./navbar.css"
 
 function Navbar({ currentUser, handleLogout }) {
-  const [sidebar, setsidebar] = useState(false);
+  const [sidebar, setsidebar] = useState(false)
 
   const showSidebar = () => {
-    setsidebar(!sidebar);
-  };
+    setsidebar(!sidebar)
+  }
 
   const loggedIn = (
     <>
-      <li
-        key={'navbar-last'}
-        style={{ backgroundColor: '#4B5869' }}
-        className={'nav-text'}
-      >
+      <li key={"navbar-last"} style={{ backgroundColor: "#4B5869" }} className={"nav-text"}>
         <Link to="/">
           <AiIcons.AiOutlineLogout />
-          <span onClick={handleLogout}>log out</span>
+          <span onClick={handleLogout}>Logout</span>
         </Link>
       </li>
     </>
-  );
+  )
 
   // if the user is logged out
   const loggedOut = (
     <>
-      <li
-        key={'navbar-last'}
-        style={{ backgroundColor: '#4B5869' }}
-        className={'nav-text'}
-      >
+      <li key={"navbar-last"} style={{ backgroundColor: "#4B5869" }} className={"nav-text"}>
         <Link to="/login">
           <AiIcons.AiOutlineLogout />
-          <span>log in</span>
+          <span>Login</span>
+        </Link>
+      </li>
+      <li key={"navbar-lasting"} style={{ backgroundColor: "#4B5869" }} className={"nav-text"}>
+        <Link to="/signup">
+          <IoIcons.IoIosArrowUp />
+          <span>Sign Up</span>
         </Link>
       </li>
     </>
-  );
+  )
 
   return (
     <>
       <div className="navbar">
         <Link to="#" className="menu-bars">
-          <FaIcons.FaBars style={{ color: 'white' }} onClick={showSidebar} />
+          <FaIcons.FaBars style={{ color: "white" }} onClick={showSidebar} />
         </Link>
       </div>
-      <nav className={sidebar ? 'nav-menu active' : 'nav-menu'}>
+      <nav className={sidebar ? "nav-menu active" : "nav-menu"}>
         <ul className="nav-menu-items" onClick={showSidebar}>
           <li className="navbar-toggle">
             <Link to="#" className="menu-bars">
-              <MdIcons.MdOutlineKeyboardReturn style={{ color: 'white' }} />
+              <MdIcons.MdOutlineKeyboardReturn style={{ color: "white" }} />
             </Link>
           </li>
           <li className="nav-text-nohover">
-            <img
-              alt="user"
-              style={{ height: '40px', width: '40px' }}
-              src="./logo.png"
-            ></img>
+            <img alt="user" style={{ height: "40px", width: "40px" }} src="./logo.png"></img>
 
             {currentUser ? (
               <p className="nav-text">Welcome, {currentUser.name}</p>
@@ -84,13 +79,13 @@ function Navbar({ currentUser, handleLogout }) {
                   <span>{item.title}</span>
                 </Link>
               </li>
-            );
+            )
           })}
           {currentUser ? loggedIn : loggedOut}
         </ul>
       </nav>
     </>
-  );
+  )
 }
 
-export default Navbar;
+export default Navbar
