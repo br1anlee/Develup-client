@@ -27,7 +27,7 @@ export default function Login({currentUser, setCurrentUser}) {
             localStorage.setItem('jwt', token)
 
             // set the state to the logged in user
-            console.log(decoded)
+            // console.log(decoded)
             setCurrentUser(decoded)
         } catch (err) {
             // handle errors such as wrong credentials

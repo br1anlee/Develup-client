@@ -3,7 +3,6 @@ import {useState} from 'react'
 
 export default function FileUploadForm ({ currentUser, users, setDisplayImg}) {
     const [formImg, setFormImg] = useState('')
-    const [msg, setMsg] = useState('')
 
     const handleSubmit = async e => {
         e.preventDefault()
@@ -26,7 +25,6 @@ export default function FileUploadForm ({ currentUser, users, setDisplayImg}) {
 
         } catch (err) {
             console.log(err)
-            setMsg('Something went wrong.')
         }
     }
     return (

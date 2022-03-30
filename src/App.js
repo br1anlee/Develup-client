@@ -25,6 +25,8 @@ function App() {
 const [currentUser, setCurrentUser] = useState(null)
 const [users, setUsers] = useState('')
 const [category, setCategory] = useState([])
+const [authors, setAuthors] = useState([])
+
 
 // useEffect to get all of the categories from the backend
 useEffect(() => {
@@ -36,22 +38,31 @@ useEffect(() => {
       console.log(err)
     })
 }, [])
-
+// useEffect(() => {
+  //   axios.get(process.env.REACT_APP_SERVER_URL + "/api-v1/user")
+  //     .then((response) => {
+    //       setAuthors(response.data)
+    //     })
+    //     .catch((err) => {
+      //       console.log(err)
+      //     })
+      // }, [])
+      
   // useEffect that handles localstorage if the user navigates away from the page or refreshes
-useEffect(() => {
-  const token = localStorage.getItem('jwt')
-  // if a token is found -> Log the user in OTHERWISE make sure they are logged out
-if (token) {
-  setCurrentUser(jwt_decode(token))
-} else {
-  setCurrentUser(null)
-}
-axios.get(`${process.env.REACT_APP_SERVER_URL}/api-v1/users/`)
-  .then(response => {
-    setUsers(response.data)
-  })
-  .catch(console.log)
-}, [])
+  useEffect(() => {
+    const token = localStorage.getItem('jwt')
+    // if a token is found -> Log the user in OTHERWISE make sure they are logged out
+    if (token) {
+      setCurrentUser(jwt_decode(token))
+    } else {
+      setCurrentUser(null)
+    }
+    axios.get(`${process.env.REACT_APP_SERVER_URL}/api-v1/users/`)
+    .then(response => {
+      setUsers(response.data)
+    })
+    .catch(console.log)
+  }, [])
 
 //Logout handler function that deletes a token from the localstorage
 const handleLogout = () => {
@@ -89,18 +100,17 @@ const handleLogout = () => {
           />
 
           <Route 
-            path='/category/:id'
-            element={currentUser ? <Decks category={category}/> : <Navigate to="/login" />}
-          />
-
-          <Route 
             path="/create-deck"
-            element={<Create currentUser={currentUser} setCategory={setCategory} category={category}/>}
+            element={currentUser ? <Create currentUser={currentUser} setCategory={setCategory} category={category}/> : <Navigate to="/login" />}
+          />
+          <Route 
+            path='/category/:id/'
+            element={currentUser ? <Decks category={category} currentUser={currentUser} users={users}/>: <Navigate to="/login" /> }
           />
 
           <Route 
             path='/category/:id/deck/:deckId'
-            element={<Cards category={category}/>}
+            element={currentUser ? <Cards category={category} />: <Navigate to="/login" /> }
           />
 
           {/* Path TO USER'S PROFILE */}
