@@ -79,7 +79,7 @@ const handleLogout = () => {
           {/* PATH to landing page (Landing page will be the login page) */}
           <Route 
             path="/about"
-            element={<About handleLogout={handleLogout} />}
+            element={<About/>}
           />
 
           <Route 
@@ -96,27 +96,27 @@ const handleLogout = () => {
           {/* Path TO CATEGORIES */}
           <Route 
             path='/category'
-            element={currentUser ? <Category category={category} /> : <Navigate to="/login" />}
+            element={currentUser ? <Category category={category} /> : <Navigate to="/" />}
           />
 
           <Route 
             path="/create-deck"
-            element={currentUser ? <Create currentUser={currentUser} setCategory={setCategory} category={category}/> : <Navigate to="/login" />}
+            element={currentUser ? <Create currentUser={currentUser} setCategory={setCategory} category={category}/> : <Navigate to="/" />}
           />
           <Route 
             path='/category/:id/'
-            element={currentUser ? <Decks category={category} currentUser={currentUser} users={users}/>: <Navigate to="/login" /> }
+            element={currentUser ? <Decks category={category} currentUser={currentUser} users={users}/>: <Navigate to="/" /> }
           />
 
           <Route 
             path='/category/:id/deck/:deckId'
-            element={currentUser ? <Cards category={category} />: <Navigate to="/login" /> }
+            element={currentUser ? <Cards category={category} />: <Navigate to="/" /> }
           />
 
           {/* Path TO USER'S PROFILE */}
           <Route 
             path="/profile"
-            element={currentUser ? <Profile  currentUser={currentUser} setUsers={setUsers} users={users} /> : <Navigate to="/login" />}
+            element={currentUser ? <Profile  currentUser={currentUser} setUsers={setUsers} users={users} /> : <Navigate to="/" />}
           />
 
           <Route 
