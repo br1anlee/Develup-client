@@ -1,9 +1,6 @@
 import { useParams, Link } from "react-router-dom"
 import { useState } from "react"
 import { FaDrumstickBite } from "react-icons/fa"
-import EditDeck from "./EditDeck"
-import Category from "./Category"
-// import {useState} from 'react'
 
 export default function Deck({ category, currentUser, users }) {
   const { id } = useParams()

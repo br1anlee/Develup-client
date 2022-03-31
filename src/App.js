@@ -53,7 +53,8 @@ useEffect(() => {
     })
     .catch(console.log)
   }, [])
-
+  
+  
 //Logout handler function that deletes a token from the localstorage
 const handleLogout = () => {
   // remove the token from the localstorage
@@ -103,7 +104,7 @@ const handleLogout = () => {
           {/* Path to CARDS */}
           <Route 
             path='/category/:id/deck/:deckId'
-            element={currentUser ? <Cards category={category} setCategory={setCategory}/>: <Navigate to="/" /> }
+            element={currentUser ? <Cards category={category} setCategory={setCategory} currentUser={currentUser}/>: <Navigate to="/" /> }
           />
 
 
