@@ -17,11 +17,9 @@
 
 
 
-
-
 .uploadAvatar {
     font-size: 16px;
-    margin: 10px;
+    margin: 5px;
 }
 
 .submitButton {
@@ -39,10 +37,18 @@
 .formProfileContainer {
     background-color: rgba(36,45,58);
     width: 426.71px;
-    height: 500px;
+    height: 600px;
     top: 109px;
     left: 427px;
     margin: auto;
     color: white;
     border: 2.35753px solid #283342;
+}
+
+.comingSoon {
+    padding: 20px;
+}
+
+.emailAddress {
+    padding: 10px;
 }

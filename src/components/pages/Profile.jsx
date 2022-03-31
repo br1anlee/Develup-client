@@ -33,9 +33,12 @@ export default function Profile({ currentUser, users, setUsers}) {
             : <img src={displayImg} alt="Profile picture" />}
         </div>
         <h3 className="emailAddress">
-          Your current email address is: {currentUser.email}
+          Email address: {currentUser.email}
         </h3>
         <FileUploadForm currentUser={currentUser} setDisplayImg={setDisplayImg}/>
+
+
+        <h4 className="comingSoon">Favorites Coming Soon</h4>
       </div>
     </div>
   )
