@@ -53,7 +53,7 @@ export default function Register({ currentUser, setCurrentUser }) {
                     <h1>DevelUp +</h1>
                 </div>
           </div>
-    <div className="formContainer">
+    <div className="formRegisterContainer">
       <div className="subMain">
         <h1 className="sign-in">Register</h1>      
         <h5 className="error-msg">{msg ? `${msg}` : ''}</h5>

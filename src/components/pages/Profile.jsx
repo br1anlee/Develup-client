@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react"
 import FileUploadForm from "../FileUploadForm"
 import axios from "axios"
+import "../layout/profile.css"
 
 export default function Profile({ currentUser, users, setUsers}) {
   // const [msg, setMsg] = useState('')
@@ -23,17 +24,19 @@ export default function Profile({ currentUser, users, setUsers}) {
 
   return (
     <div className="center">
-      <h1>DevelUp Profile</h1>
-      {displayImg ===
-      `https://res.cloudinary.com/solful/image/upload/c_thumb,g_face,h_300,w_300/undefined.png`
-        ? "No Profile Picture"
-        : <img src={displayImg} alt="Profile picture" />}
-        {currentUser && 
-      <h3>
-        {currentUser.name} | {currentUser.email}
-      </h3>
-      }
-      <FileUploadForm currentUser={currentUser} setDisplayImg={setDisplayImg}/>
+      <div className="formProfileContainer">
+        <h1 className="profileName">Welcome {currentUser.name}</h1>
+        <div className="image-container">
+          {displayImg ===
+          `https://res.cloudinary.com/solful/image/upload/c_thumb,g_face,h_300,w_300/undefined.png`
+            ? "No Profile Picture"
+            : <img src={displayImg} alt="Profile picture" />}
+        </div>
+        <h3 className="emailAddress">
+          Your current email address is: {currentUser.email}
+        </h3>
+        <FileUploadForm currentUser={currentUser} setDisplayImg={setDisplayImg}/>
+      </div>
     </div>
   )
 }

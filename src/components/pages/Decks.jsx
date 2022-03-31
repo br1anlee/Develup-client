@@ -39,7 +39,7 @@ export default function Deck({ category, currentUser, users }) {
               {deck.deckName}
             </p>
 
-            <p className="category-text-small">{deck.cards.length} Cards</p>
+            <p className="category-text-small">{deck.cards.length < 2 ? <p>{deck.cards.length} Card</p> : <p>{deck.cards.length} Cards</p>} </p>
             <p className="category-text-small">Author: {users[userIdx].name}</p>
 
             </div>
