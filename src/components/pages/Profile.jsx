@@ -3,28 +3,19 @@ import FileUploadForm from "../FileUploadForm"
 import axios from "axios"
 import "../layout/profile.css"
 
-export default function Profile({ currentUser, users, setUsers}) {
+export default function Profile({ currentUser, users,}) {
   // const [msg, setMsg] = useState('')
   const [displayImg, setDisplayImg] = useState("")
 
-    let foundUser = users.find((user) => {
-      return  user._id === currentUser.id
-    })
+    // let foundUser = users.find((user) => {
+    //   return  user._id === currentUser.id
+    // })
+    // console.log(users)
   
-  console.log(foundUser.name)
-  
-  // let showAllDecks
-  // if (deckIdx != -1) {
-  //   showAllDecks = category[deckIdx].decks.map((deck, i) => {
-  //     let userIdx = users.findIndex((object) => {
-  //       return object._id === deck.author
-  //     })
-
   useEffect(() => {
     axios
       .get(`${process.env.REACT_APP_SERVER_URL}/api-v1/users/${currentUser.id}`)
       .then((response) => {
-          console.log(response.data)
         setDisplayImg(
           `https://res.cloudinary.com/solful/image/upload/c_thumb,g_face,h_300,w_300/${response.data.avatar}.png`
         )
