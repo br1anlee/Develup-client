@@ -1,29 +1,54 @@
-function VisibleCards ({cards, currentCards, setCurrentCards}) {
+import { useState } from "react";
 
-    const visibleCards = cards.map((element, idx)=>{
+function VisibleCards ({currentCards, setCurrentCards, cards, newCard}) {
 
-        return(
-            <>
-            <p>Card {idx+1}</p>
-            <input type="text"
-             value={element.question}
+
+console.log(newCard)
+    const visibleCards = (e)=>{
+
+
+
+
+    }
+
+    const cardsArray = newCard.map((element, index)=>{
+
+        return (
+          <div className='create-card-div'>
+            <label hidden htmlFor="card-question">
+              Card {index}
+            </label>
+            <div>
+              <input
+                className="create-question-input"
+                required
+                type="text"
+                placeholder="Question.."
+                id="card-question"
+                name="question"
+                value={element.question}
 
               />
-            {/* <p key={`visible-question-${idx}`}>{element.question}</p> */}
-            <input type="text"
-             value={element.answer}
-
+              <input
+                required
+                className="create-answer-input"
+                type="text"
+                placeholder="Answer.."
+                id="card-answer"
+                name="answer"
+                value={element.answer}
+                        
               />
-            {/* <p key={`visible-answer-${idx}`}>{element.answer}</p> */}
-            </>
-        )
+            </div>
+          </div>
+        );
 
+        
     })
-
 
     return ( 
             <>
-                {visibleCards}
+            {cardsArray}
             </>
      );
 }

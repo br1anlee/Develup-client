@@ -10,8 +10,8 @@ export default function Cards({ category, setCategory }) {
   const [deck, setDeck] = useState([])
   const [showForm, setShowForm] = useState(false)
 
+  //Getting Navigate to work on HandleSubmit
   let navigate = useNavigate()
-
   const handleSubmit = (e) => {
     e.preventDefault()
     axios
@@ -31,37 +31,17 @@ export default function Cards({ category, setCategory }) {
       .catch(console.log)
   }
 
+  //Getting the cars to be mapped out
   let categoryIdx = category.findIndex((object) => {
     return object._id === id
   })
   const currentDeck = category[categoryIdx]
-  const [showForm, setShowForm] = useState(false)
-
-  const [flip,setFlip] = useState(false)
-
-//   const refreshCards = () => {axios.get(process.env.REACT_APP_SERVER_URL + "/api-v1/category")
-//       .then((response) => {
-//         setCategory(response.data)
-//       })
-//       .catch((err) => {
-//         console.log(err)
-//       })
-//     }
-
-  // let categoryId = currentDeck._id
-  // console.log(categoryId)
-
   let deckIdx = currentDeck.decks.findIndex((object) => {
     return object._id === deckId
   })
-
   let deckName = currentDeck.decks[deckIdx].deckName
-
-  //   let decksId = currentDeck.decks[deckIdx]._id
-
   let categoryId = id
   let decksId = deckId
-
   let showAllCards
   if (deckIdx != -1) {
     showAllCards = currentDeck.decks[deckIdx].cards.map((card, i) => {
@@ -74,6 +54,10 @@ export default function Cards({ category, setCategory }) {
     })
   }
 
+  const [num, setNum] = useState(0)
+
+
+
   return (
     <>
       <div className="center">
@@ -82,17 +66,7 @@ export default function Cards({ category, setCategory }) {
         <EditDeck categoryId={categoryId} decksId={decksId} category={category} />
         <button onClick={handleSubmit}>Delete Deck</button>
       </div>
-      {/* {showForm ? (
-        <EditDeck
-          categoryId={categoryId}
-          decksId={decksId}
-          category={category}
-          setShowForm={setShowForm}
-          showForm={showForm}
-        />
-      ) : (
-        { showAllCards }
-      )} */}
+      <button onClick={()=>(setNum(num+1))}>Add</button>
     </>
 
   )

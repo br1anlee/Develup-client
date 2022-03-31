@@ -29,11 +29,11 @@ export default function Deck({ category, currentUser, users }) {
       let userIdx = users.findIndex((object) => {
         return object._id === deck.author
       })
-
+{/* <Link  key={`link${i}`} to={`/category/${category._id}`} style={{textDecoration: 'none'}}> */}
       return (
         <>
-          <div className="deck-div" key={`category-link${i}`} style={{textDecoration: 'none'}}>
-        <Link key={`link-link${i}`} to={`/category/${id}/deck/${deck._id}`}>
+          <div className="deck-div" key={`category-link${i}`} >
+        <Link key={`link-link${i}`} to={`/category/${id}/deck/${deck._id}`} style={{textDecoration: 'none'}}>
             <div key={`deckName-Div-link${i}`}>
             <p key={`deckName-link${i}`} className="category-text">
               {deck.deckName}
