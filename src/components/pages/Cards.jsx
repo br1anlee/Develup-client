@@ -9,6 +9,7 @@ export default function Cards({ category, setCategory }) {
   const [deckData, setDeckData] = useState([])
   const [showForm, setShowForm] = useState(false)
 
+
   useEffect(() => {
     axios
       .get(`${process.env.REACT_APP_SERVER_URL}/api-v1/category/${categoryId}/deck/${decksId}`)
@@ -39,11 +40,12 @@ export default function Cards({ category, setCategory }) {
       .catch(console.log)
   }
 
-  
+  //Getting the cars to be mapped out
   let categoryIdx = category.findIndex((object) => {
     return object._id === id
   })
   const currentDeck = category[categoryIdx]
+
   
   if (!currentDeck) {
     return <Navigate to='/category' />
@@ -67,6 +69,8 @@ export default function Cards({ category, setCategory }) {
       )
     })
   }
+  const [num, setNum] = useState(0)
+
   
   return (
     <>
@@ -92,8 +96,8 @@ export default function Cards({ category, setCategory }) {
       </button>
         <br></br>
         <button onClick={handleSubmit}>Delete Deck</button>
+        <button onClick={()=>(setNum(num+1))}>Add</button>
         </div>
     </>
-
   )
 }
