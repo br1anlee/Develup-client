@@ -89,3 +89,25 @@
 .a-tag:link{
     color: white;
 }
+
+.name{
+  width: 200.28px;
+  height: 25.08px;
+  left: 442.72px;
+  top: 298px;
+  background: linear-gradient(0deg, #EEEEEE, #EEEEEE), #C4C4C4;
+  border: 0.785844px solid #000000;
+  box-sizing: border-box;
+  box-shadow: inset 0px 3.14338px 3.14338px rgba(0, 0, 0, 0.25);
+}
+
+.confirmation {
+  width: 200.28px;
+  height: 25.08px;
+  left: 442.72px;
+  top: 298px;
+  background: linear-gradient(0deg, #EEEEEE, #EEEEEE), #C4C4C4;
+  border: 0.785844px solid #000000;
+  box-sizing: border-box;
+  box-shadow: inset 0px 3.14338px 3.14338px rgba(0, 0, 0, 0.25);
+}

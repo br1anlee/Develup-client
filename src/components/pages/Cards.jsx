@@ -57,6 +57,24 @@ export default function Cards({ category, setCategory, currentUser }) {
       <div className="center">
         <h1>Deck Name: {deckData.deckName}</h1>
 
+
+// This is GABES CODE
+        <button onClick={()=>(setNum(num+1))}>Add</button>
+        
+        </div>
+        {/* {deckData.map((deckData, index) => {
+        <div className="card">
+          <div className="card-body">
+            <button className="btn-fermer" onClick={() => removeItem(index)}>
+              Next Card
+            </button>
+
+            <h6 className="card-id" key={deckData.id + index}>
+            </h6>
+          </div>
+        }
+        </div>   */}
+         
         {showForm ? (
           <EditDeck
             categoryId={id}

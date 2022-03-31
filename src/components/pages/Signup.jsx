@@ -2,6 +2,7 @@ import { useState } from 'react'
 import axios from 'axios'
 import jwt_decode from 'jwt-decode'
 import { Navigate } from 'react-router-dom'
+import "../layout/Login.css"
 
 
 export default function Register({ currentUser, setCurrentUser }) {
@@ -52,12 +53,13 @@ export default function Register({ currentUser, setCurrentUser }) {
                     <h1>DevelUp +</h1>
                 </div>
           </div>
-    <div className="form-Container">
-      <h1 className="sign-in">Register</h1>      
+    <div className="formContainer">
+      <div className="subMain">
+      <h3 className="sign-in">Register</h3>      
       <p>{msg}</p>
+    </div>
 
       <form onSubmit={handleSubmit}>
-
         <div>
         <label htmlFor="email">Email:</label>
         <input 
@@ -65,7 +67,8 @@ export default function Register({ currentUser, setCurrentUser }) {
           id="email"
           value={form.email}
           onChange={e => setForm({ ...form, email: e.target.value })}
-          placeholder='enter your email...'
+          placeholder='  enter your email...'
+          className="emailInput"
           />
         </div>
 
@@ -76,7 +79,8 @@ export default function Register({ currentUser, setCurrentUser }) {
           id="name"
           value={form.name}
           onChange={e => setForm({ ...form, name: e.target.value })}
-          placeholder='enter your name...'
+          placeholder='  enter your name...'
+          className="name"
           />
         </div>
 
@@ -87,7 +91,8 @@ export default function Register({ currentUser, setCurrentUser }) {
           id="password"
           value={form.password}
           onChange={e => setForm({ ...form, password: e.target.value })}
-          placeholder='enter your password...'
+          placeholder='  enter your password...'
+          className="passwordInput"
           />
         </div>
         
@@ -98,13 +103,13 @@ export default function Register({ currentUser, setCurrentUser }) {
           id="passwordConfirmation"
           value={form.passwordConfirmation}
           onChange={e => setForm({ ...form, passwordConfirmation: e.target.value })}
-          placeholder='enter your confirmation...'
+          placeholder='  re-enter your password...'
+          className="confirmation"
           />
         </div>
-
-        <div className="center">
-          <input type="submit" />
-        </div>
+          <button className="enterButton" type="submit">Submit</button>
+          <p>Already have an account? <a href="/" className="a-tag">Click here</a></p>
+  
       </form>
     </div>
   </div>
