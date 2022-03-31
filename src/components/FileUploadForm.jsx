@@ -1,7 +1,7 @@
 import axios from 'axios'
 import {useState} from 'react'
 
-export default function FileUploadForm ({ currentUser, users, setDisplayImg}) {
+export default function FileUploadForm ({ currentUser, setDisplayImg, }) {
     const [formImg, setFormImg] = useState('')
 
     const handleSubmit = async e => {
@@ -15,13 +15,16 @@ export default function FileUploadForm ({ currentUser, users, setDisplayImg}) {
             }
             const fd = new FormData();
             fd.append('image', formImg)
-            const response = await axios.post(`${process.env.REACT_APP_SERVER_URL}/api-v1/images`, fd, options)
+            await axios.post(`${process.env.REACT_APP_SERVER_URL}/api-v1/images`, fd, options)
 
-            const foundUser = users.find(user => {
+            const response = await axios.get(`${process.env.REACT_APP_SERVER_URL}/api-v1/users/`)
+            
+            const foundUser = response.data.find(user => {
                 return user._id === currentUser.id
             })
 
             setDisplayImg(`https://res.cloudinary.com/solful/image/upload/c_thumb,g_face,h_300,w_300/${foundUser.avatar}.png`)
+
 
         } catch (err) {
             console.log(err)
