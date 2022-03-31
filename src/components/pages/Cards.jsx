@@ -55,9 +55,7 @@ export default function Cards({ category, setCategory, currentUser }) {
     <>
       <div className="center">
         <h1>Deck Name: {deckData.deckName}</h1>
-
         <button onClick={()=>(setNum(num+1))}>Add</button>
-      
      
       
          
