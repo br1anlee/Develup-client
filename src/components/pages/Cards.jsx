@@ -11,6 +11,9 @@ export default function Cards({ category, setCategory, currentUser }) {
   const [showForm, setShowForm] = useState(false)
   const [num, setNum] = useState(0)
 
+  const [flip, setFlip] = useState(false)
+  
+
   let navigate = useNavigate()
 
   useEffect(() => {
@@ -52,6 +55,23 @@ export default function Cards({ category, setCategory, currentUser }) {
     )
   })
 
+  const toggleDisplay = ()=>{
+
+    setFlip(!flip)
+
+  }
+
+  const handleAddNum = () => {
+    setFlip(false)
+    if(num >= deckData.cards.length-1) {
+      setNum(0)
+    } else {
+      setNum(num+1)
+    }
+  }
+  console.log(deckData.cards[num])
+
+  
   return (
     <>
       <div className="center">
@@ -67,7 +87,7 @@ export default function Cards({ category, setCategory, currentUser }) {
             deckData={deckData}
           />
         ) : (
-          showAllCards
+          <></>
         )}
 
         {currentUser.id === deckData.author ? (
@@ -79,7 +99,13 @@ export default function Cards({ category, setCategory, currentUser }) {
         ) : (
           <></>
         )}
-        {/* <button onClick={()=>(setNum(num+1))}>Add</button> */}
+        <br></br>
+        <div>
+          <p>{deckData.cards[num] === undefined  ? "This is empty" : deckData.cards[num].question}</p>
+          {flip ? <p>{deckData.cards[num] === undefined  ? "This is empty" : deckData.cards[num].answer}</p> : <p></p>}
+        </div>
+        <button onClick={toggleDisplay}>Show Answer</button>
+        <button onClick={handleAddNum}>Next Card</button>
       </div>
     </>
   )

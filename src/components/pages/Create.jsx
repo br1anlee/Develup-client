@@ -8,6 +8,7 @@ function Create({ currentUser, setCategory, category }) {
   const [cards, setCards] = useState([{ question: '', answer: '' }]);
   const [currentCards, setCurrentCards] = useState({});
   const [newCard, setNewCard] = useState([])
+
   const navigate = useNavigate();
 
   const [form, setForm] = useState({
@@ -53,12 +54,12 @@ function Create({ currentUser, setCategory, category }) {
     e.preventDefault();
     try {
       const response = await axios.post(
-        `http://localhost:2996/api-v1/category`,
+        `${process.env.REACT_APP_SERVER_URL}/api-v1/category`,
         form
       );
       setCategory(category);
       refreshCategory();
-      navigate('/category');
+      navigate('/category', );
     } catch (err) {
       setMsg(err.response.data.msg);
       console.log(err);
