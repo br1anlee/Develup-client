@@ -6,7 +6,7 @@ import "../layout/register.css"
 
 
 
-export default function Register({ currentUser, setCurrentUser }) {
+export default function Register({ currentUser, setCurrentUser, setUsers, users }) {
   const [form, setForm] = useState({
     email: '',
     password: '',
@@ -31,6 +31,8 @@ export default function Register({ currentUser, setCurrentUser }) {
         const decoded = jwt_decode(token)
         // log the user in 
         setCurrentUser(decoded)
+        const response2 = await axios.get(`${process.env.REACT_APP_SERVER_URL}/api-v1/users`)
+        setUsers(response2.data)
       } else {
         setMsg('the two passwords you entered do not match 🥴')
       }

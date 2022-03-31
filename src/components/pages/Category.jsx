@@ -12,9 +12,9 @@ export default function Category({ category }) {
           <p key={`category-name-${i}`} className="category-text">
             {category.name}
           </p>
-          <p key={`deck-number-${i}`} className="category-text-small">
+          <div key={`deck-number-${i}`} className="category-text-small">
             {category.decks.length < 2 ? <p> {category.decks.length} deck</p> : <p> {category.decks.length} decks</p>}
-          </p>
+          </div>
         </div>
       </Link>
     );

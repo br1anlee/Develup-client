@@ -1,18 +1,10 @@
 import { useState } from "react";
 
 function VisibleCards ({currentCards, setCurrentCards, cards, newCard}) {
-
-    const visibleCards = (e)=>{
-
-
-
-
-    }
-
     const cardsArray = newCard.map((element, index)=>{
 
         return (
-          <div className='create-card-div'>
+          <div className='create-card-div' key={`element-${index}`}>
             <label hidden htmlFor="card-question">
               Card {index}
             </label>
@@ -40,8 +32,6 @@ function VisibleCards ({currentCards, setCurrentCards, cards, newCard}) {
             </div>
           </div>
         );
-
-        
     })
 
     return ( 

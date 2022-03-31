@@ -25,7 +25,7 @@ function App() {
 const [currentUser, setCurrentUser] = useState(null)
 const [users, setUsers] = useState('')
 const [category, setCategory] = useState([])
-const [authors, setAuthors] = useState([])
+
 
 // useEffect to get all of the categories from the backend
 useEffect(() => {
@@ -81,7 +81,7 @@ const handleLogout = () => {
           {/* Path TO REGISTER */}
           <Route 
             path='/signup'
-            element={<Signup currentUser={currentUser} setCurrentUser={setCurrentUser}/>}
+            element={<Signup currentUser={currentUser} setCurrentUser={setCurrentUser} setUsers={setUsers} />}
           />
 
           {/* Path TO CATEGORIES */}
