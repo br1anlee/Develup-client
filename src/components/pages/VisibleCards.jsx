@@ -32,6 +32,7 @@ function VisibleCards({ currentCards, setCurrentCards, cards, newCard }) {
   })
 
   return <>{cardsArray}</>
+
 }
 
 export default VisibleCards

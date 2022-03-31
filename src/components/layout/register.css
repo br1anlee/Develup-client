@@ -1,0 +1,74 @@
+* {
+    padding: 0px;
+    margin: 0px;
+}
+
+
+.formRegisterContainer {
+    background-color: rgba(36,45,58);
+    width: 426.71px;
+    height: 350px;
+    top: 109px;
+    left: 427px;
+    margin: auto;
+    color: white;
+    border: 2.35753px solid #283342;
+}
+
+.emailInput {
+    width: 200.28px;
+    height: 25.08px;
+    left: 442.72px;
+    top: 298px;
+    background: linear-gradient(0deg, #EEEEEE, #EEEEEE), #C4C4C4;
+    border: 0.785844px solid #000000;
+    box-sizing: border-box;
+    box-shadow: inset 0px 3.14338px 3.14338px rgba(0, 0, 0, 0.25);
+    margin: 10px;
+}
+
+.nameInput {
+    width: 200.28px;
+    height: 25.08px;
+    left: 442.72px;
+    top: 298px;
+    background: linear-gradient(0deg, #EEEEEE, #EEEEEE), #C4C4C4;
+    border: 0.785844px solid #000000;
+    box-sizing: border-box;
+    box-shadow: inset 0px 3.14338px 3.14338px rgba(0, 0, 0, 0.25);
+    margin: 10px;
+}
+.passwordInput {
+    width: 200.28px;
+    height: 25.08px;
+    left: 442.72px;
+    top: 298px;
+    background: linear-gradient(0deg, #EEEEEE, #EEEEEE), #C4C4C4;
+    border: 0.785844px solid #000000;
+    box-sizing: border-box;
+    box-shadow: inset 0px 3.14338px 3.14338px rgba(0, 0, 0, 0.25);
+    margin: 10px;
+}
+.passwordInputConfirmation {
+    width: 200.28px;
+    height: 25.08px;
+    left: 440;
+    top: 298px;
+    background: linear-gradient(0deg, #EEEEEE, #EEEEEE), #C4C4C4;
+    border: 0.785844px solid #000000;
+    box-sizing: border-box;
+    box-shadow: inset 0px 3.14338px 3.14338px rgba(0, 0, 0, 0.25);
+    margin: 10px;
+}
+
+.enterButton {
+    width: 100.88px;
+    height: 20.5px;
+    left: 581px;
+    top: 456px;
+    background: #C4C4C4;
+    border: 0.785844px solid #000000;
+    box-sizing: border-box;
+    border-radius: 5.50091px;
+    margin-top: 10px;
+}

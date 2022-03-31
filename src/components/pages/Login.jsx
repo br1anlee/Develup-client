@@ -53,7 +53,7 @@ export default function Login({currentUser, setCurrentUser}) {
             </div>
             <div className="formContainer">
                 <div className="subMain">
-                    <h3 className="sign-in">Sign In</h3>
+                    <h1 className="sign-in">Sign In</h1>
                     <h5 className="error-msg">{msg ? `${msg}` : ''}</h5>
                 </div>
 

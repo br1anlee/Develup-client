@@ -57,9 +57,11 @@ function Create({ currentUser, setCategory, category }) {
   return (
     <>
       {msg ? (
+
         <h3 className="selectDifferentName">
           Please select different deck name. That deck name already exists!
         </h3>
+
       ) : (
         <></>
       )}
@@ -72,6 +74,7 @@ function Create({ currentUser, setCategory, category }) {
                   <label htmlFor="category-name" className="createLabel">
                     Category
                   </label>
+
                 </div>
                 <div>
                   <input
@@ -87,6 +90,7 @@ function Create({ currentUser, setCategory, category }) {
                   <label htmlFor="deck-name" className="createLabel">
                     Deck name
                   </label>
+
                 </div>
                 <div>
                   <input
@@ -95,6 +99,7 @@ function Create({ currentUser, setCategory, category }) {
                     placeholder="deck name.."
                     id="deck-name"
                     value={form.deckName}
+
                     onChange={(e) => setForm({ ...form, deckName: e.target.value })}
                   />
                 </div>
@@ -140,6 +145,7 @@ function Create({ currentUser, setCategory, category }) {
                       onClick={() => handleAddCard(currentCards.question, currentCards.answer)}
                     />
                   </div>
+
                 </div>
               </div>
             </div>
