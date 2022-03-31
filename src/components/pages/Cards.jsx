@@ -1,16 +1,25 @@
-import { useState } from "react"
-import { useParams, useNavigate } from "react-router-dom"
+import { useState, useEffect } from "react"
+import { useParams, Navigate } from "react-router-dom"
 import EditDeck from "./EditDeck"
 import axios from "axios"
 
 export default function Cards({ category, setCategory }) {
   const { id } = useParams()
   const { deckId } = useParams()
-
-  const [deck, setDeck] = useState([])
+  const [deckData, setDeckData] = useState([])
   const [showForm, setShowForm] = useState(false)
 
-  let navigate = useNavigate()
+  useEffect(() => {
+    axios
+      .get(`${process.env.REACT_APP_SERVER_URL}/api-v1/category/${categoryId}/deck/${decksId}`)
+      .then((response) => {
+          // console.log(response.data)
+          setDeckData(response.data)
+      })
+      .catch((err) => {
+        console.log(err)
+      })
+  }, [showForm])
 
   const handleSubmit = (e) => {
     e.preventDefault()
@@ -20,68 +29,71 @@ export default function Cards({ category, setCategory }) {
         category
       )
       .then((response) => {
-        console.log(response.data)
-        setDeck({})
-        return axios.get(process.env.REACT_APP_SERVER_URL + "/category")
+        // console.log(response.data)
+        setDeckData({})
+        return axios.get(process.env.REACT_APP_SERVER_URL + "/api-v1/category")
       })
       .then((response) => {
         setCategory(response.data)
-        navigate("/category")
       })
       .catch(console.log)
   }
 
+  
   let categoryIdx = category.findIndex((object) => {
     return object._id === id
   })
-
   const currentDeck = category[categoryIdx]
-
-  // let categoryId = currentDeck._id
-  // console.log(categoryId)
+  
+  if (!currentDeck) {
+    return <Navigate to='/category' />
+  }
 
   let deckIdx = currentDeck.decks.findIndex((object) => {
     return object._id === deckId
   })
-
-  let deckName = currentDeck.decks[deckIdx].deckName
-
-  //   let decksId = currentDeck.decks[deckIdx]._id
-
+  
   let categoryId = id
   let decksId = deckId
-
+  
   let showAllCards
   if (deckIdx != -1) {
     showAllCards = currentDeck.decks[deckIdx].cards.map((card, i) => {
       return (
-        <div key={`card-${i}`}>
+        <div key={`card-${i}`} >
           <p>Question: {card.question}</p>
           <p>Answer: {card.answer}</p>
         </div>
       )
     })
   }
-
+  
   return (
     <>
       <div className="center">
-        <h1>Deck Name: {deckName}</h1>
-        {showAllCards} 
-        <EditDeck categoryId={categoryId} decksId={decksId} category={category} />
-        <button onClick={handleSubmit}>Delete Deck</button>
-      </div>
-      {/* {showForm ? (
+        <h1>Deck Name: {deckData.deckName}</h1>
+
+      {showForm ? 
         <EditDeck
-          categoryId={categoryId}
-          decksId={decksId}
-          category={category}
-          setShowForm={setShowForm}
-          showForm={showForm}
+        categoryId={categoryId}
+        decksId={decksId}
+        category={category}
+        setShowForm={setShowForm}
+        showForm={showForm}
+        deckData={deckData}
         />
-      ) : (
-        { showAllCards }
-      )} */}
+        : 
+        showAllCards
+      }
+      <button
+      onClick={() => setShowForm(!showForm)}
+      >
+        {showForm ? 'exit' : 'edit'}
+      </button>
+        <br></br>
+        <button onClick={handleSubmit}>Delete Deck</button>
+        </div>
     </>
+
   )
 }

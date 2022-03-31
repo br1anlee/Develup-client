@@ -14,7 +14,7 @@ function Navbar({ currentUser, handleLogout }) {
   const showSidebar = () => {
     setsidebar(!sidebar)
   }
-
+  // if the user is logged in
   const loggedIn = (
     <>
       <li key={"navbar-last"} style={{ backgroundColor: "#4B5869" }} className={"nav-text"}>
@@ -50,6 +50,11 @@ function Navbar({ currentUser, handleLogout }) {
         <Link to="#" className="menu-bars">
           <FaIcons.FaBars style={{ color: "white" }} onClick={showSidebar} />
         </Link>
+        <div style={{display: "flex", flexDirection:"row"}}>
+      <img alt="user" style={{ height: "40px", width: "40px", margin: "0" }} src="./logo.png"></img>
+          <h1 style={{color: "white", padding: "0 20px 0 20px"}}>DevelUp +</h1>
+
+        </div>
       </div>
       <nav className={sidebar ? "nav-menu active" : "nav-menu"}>
         <ul className="nav-menu-items" onClick={showSidebar}>
@@ -59,12 +64,16 @@ function Navbar({ currentUser, handleLogout }) {
             </Link>
           </li>
           <li className="nav-text-nohover">
-            <img alt="user" style={{ height: "40px", width: "40px" }} src="./logo.png"></img>
+    {/* {currentUser.avatar ?
+      <img alt="user" style={{ height: "40px", width: "40px", margin: "0" }} src={`https://res.cloudinary.com/solful/image/upload/c_thumb,g_face,h_200,w_200/${currentUser.avatar}.png`}></img> 
+      :
+     <img alt="user" style={{ height: "40px", width: "40px", margin: "0" }} src="./logo.png"></img>} */}
 
+     <img alt="user" style={{ height: "40px", width: "40px", margin: "0" }} src="./logo.png"></img>
             {currentUser ? (
-              <p className="nav-text">Welcome, {currentUser.name}</p>
+              <p className="nav-text">Hello, {currentUser.name}!</p>
             ) : (
-              <p>Not Logged In</p>
+              <p className="nav-text">Please Log-in</p>
             )}
           </li>
           {SidebarData.map((item, index) => {
