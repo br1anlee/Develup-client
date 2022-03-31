@@ -10,9 +10,13 @@ const [editCard, setEditCard] = useState(deckData.cards)
 
 console.log(editCard)
     const handleOnClick=(e)=>{
+        const finalForm = {deckName: editForm.deckName}
+        finalForm.cards = editCard
+        console.log(finalForm)
+        
         e.preventDefault()
         axios
-        .put(`${process.env.REACT_APP_SERVER_URL}/api-v1/category/${categoryId}/deck/${decksId}`, editForm)
+        .put(`${process.env.REACT_APP_SERVER_URL}/api-v1/category/${categoryId}/deck/${decksId}`, finalForm)
         .then((response) => {
             setShowForm(!showForm)
             return axios.get(`${process.env.REACT_APP_SERVER_URL}/api-v1/category/${categoryId}/deck/${decksId}`)
