@@ -1,5 +1,7 @@
-import axios from "axios"
-import { useState } from "react"
+import axios from 'axios'
+import {useState} from 'react'
+import "./layout/profile.css"
+
 
 export default function FileUploadForm({ currentUser, setDisplayImg }) {
   const [formImg, setFormImg] = useState("")
@@ -28,22 +30,16 @@ export default function FileUploadForm({ currentUser, setDisplayImg }) {
     } catch (err) {
       console.log(err)
     }
-  }
-  return (
-    <>
-      <br></br>
-      <h5>Upload an Avatar</h5>
-      <form onSubmit={handleSubmit} encType="multipart/form">
-        <label htmlFor="image"></label>
-        <input
-          type="file"
-          name="image"
-          id="image"
-          onChange={(e) => setFormImg(e.target.files[0])}
-        />
-        <br></br>
-        <input type="submit" />
-      </form>
-    </>
-  )
+    return (
+        <>
+            <br></br>
+            <h5 className="uploadAvatar">Upload an Avatar</h5>
+            <form onSubmit={handleSubmit} encType='multipart/form'>
+                <label htmlFor="image"></label>
+                <input type="file" name="image" id="image" onChange={e => setFormImg(e.target.files[0])}/>
+                <br></br>
+                <input type="submit" className="submitButton"/>
+            </form>
+        </>
+    )
 }

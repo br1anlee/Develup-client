@@ -51,17 +51,15 @@ export default function Cards({ category, setCategory, currentUser }) {
       </div>
     )
   })
-
   return (
     <>
       <div className="center">
         <h1>Deck Name: {deckData.deckName}</h1>
-
-
 // This is GABES CODE
         <button onClick={()=>(setNum(num+1))}>Add</button>
-        
         </div>
+     
+        // This is commented
         {/* {deckData.map((deckData, index) => {
         <div className="card">
           <div className="card-body">
@@ -97,7 +95,6 @@ export default function Cards({ category, setCategory, currentUser }) {
         ) : (
           <></>
         )}
-        {/* <button onClick={()=>(setNum(num+1))}>Add</button> */}
       </div>
     </>
   )

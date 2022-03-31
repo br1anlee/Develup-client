@@ -2,8 +2,6 @@ import { useState } from "react";
 
 function VisibleCards ({currentCards, setCurrentCards, cards, newCard}) {
 
-
-console.log(newCard)
     const visibleCards = (e)=>{
 
 
