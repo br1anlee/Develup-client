@@ -19,6 +19,7 @@ export default function Category({ category }) {
       </Link>
     );
   });
+
   return (
     <div style={{ textAlign: 'center' }}>
       <h1>View all Categories:</h1>

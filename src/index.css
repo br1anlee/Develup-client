@@ -82,8 +82,12 @@ code {
   text-align: center;
 }
 
-.selectDifferentName {
-  color: red;
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 15px;
 }
 
 .create-container-main{

@@ -44,7 +44,6 @@ function Navbar({ currentUser, handleLogout }) {
     </>
   )
 
-  console.log(currentUser)
   return (
     <>
       <div className="navbar">
