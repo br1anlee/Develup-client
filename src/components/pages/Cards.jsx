@@ -71,7 +71,6 @@ export default function Cards({ category, setCategory }) {
     })
   }
 
-
   const cardNum =  currentDeck.decks[deckIdx].cards[num]
 
   console.log(cardNum)
@@ -96,7 +95,7 @@ export default function Cards({ category, setCategory }) {
       <button
       onClick={() => setShowForm(!showForm)}
       >
-        {showForm ? 'exit' : 'edit'}
+        {showForm ? 'Return' : 'Edit'}
       </button>
         <br></br>
         <button onClick={handleSubmit}>Delete Deck</button>
