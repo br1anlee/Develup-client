@@ -24,15 +24,26 @@ console.log(editCard)
         .catch(console.log)
     }
 
+<<<<<<< HEAD
     
     
     let showAllCards = deckData.cards.map((card, idx) => {
+=======
+
+    let showAllCards = deckData.cards.map((card, idx) => {
+        
+
+>>>>>>> eee0a60 (edit works but needs backend to work)
 
         const handleCardQuestion = (e) => {
             const newDeck = [...editCard]
             newDeck[idx].question = e.target.value
             setEditCard(newDeck)
         }
+<<<<<<< HEAD
+=======
+
+>>>>>>> eee0a60 (edit works but needs backend to work)
         const handleCardAnswer = (e) => {
             const newDeck = [...editCard]
             newDeck[idx].answer = e.target.value
@@ -56,7 +67,11 @@ console.log(editCard)
                         placeholder="Answer"
                         value={editCard[idx].answer}
                         id="answer"
+<<<<<<< HEAD
                         onChange = {handleCardAnswer}
+=======
+                        onChange = {e => setEditForm({...editForm, cardAnswer: e.target.value})}
+>>>>>>> eee0a60 (edit works but needs backend to work)
                     />
                 </form>
             </div>
@@ -95,7 +110,7 @@ console.log(editCard)
                     name="question"
                     value={editForm.Question}
                     onChange={(e) =>
-                        setEditForm({ ...editForm, uestion: e.target.value })
+                        setEditForm({ ...editForm, question: e.target.value })
                     }
                 /> */}
 
