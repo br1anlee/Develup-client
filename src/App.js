@@ -81,7 +81,7 @@ const handleLogout = () => {
           {/* Path TO REGISTER */}
           <Route 
             path='/signup'
-            element={<Signup currentUser={currentUser} setCurrentUser={setCurrentUser}/>}
+            element={<Signup currentUser={currentUser} setCurrentUser={setCurrentUser} setUsers={setUsers}/>}
           />
 
           {/* Path TO CATEGORIES */}
