@@ -8,6 +8,7 @@ export default function Cards({ category, setCategory }) {
   const { deckId } = useParams()
   const [deckData, setDeckData] = useState([])
   const [showForm, setShowForm] = useState(false)
+  const [num, setNum] = useState(0)
 
 
   useEffect(() => {
@@ -69,8 +70,11 @@ export default function Cards({ category, setCategory }) {
       )
     })
   }
-  const [num, setNum] = useState(0)
 
+
+  const cardNum =  currentDeck.decks[deckIdx].cards[num]
+
+  console.log(cardNum)
   
   return (
     <>
