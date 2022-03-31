@@ -5,6 +5,7 @@ import { Navigate } from 'react-router-dom'
 import "../layout/register.css"
 
 
+
 export default function Register({ currentUser, setCurrentUser }) {
   const [form, setForm] = useState({
     email: '',
@@ -59,8 +60,8 @@ export default function Register({ currentUser, setCurrentUser }) {
         <h5 className="error-msg">{msg ? `${msg}` : ''}</h5>
       </div>
 
-      <form onSubmit={handleSubmit}>
 
+      <form onSubmit={handleSubmit}>
         <div>
         <input 
           type="email"
@@ -69,6 +70,7 @@ export default function Register({ currentUser, setCurrentUser }) {
           onChange={e => setForm({ ...form, email: e.target.value })}
           placeholder='Email'
           className='emailInput'
+
           />
         </div>
 
@@ -90,6 +92,7 @@ export default function Register({ currentUser, setCurrentUser }) {
           value={form.password}
           onChange={e => setForm({ ...form, password: e.target.value })}
           placeholder='Password'
+
           className="passwordInput"
           />
         </div>
@@ -110,6 +113,7 @@ export default function Register({ currentUser, setCurrentUser }) {
           <input type="submit" className="enterButton" />
           <p>Have an account? <a href="/" className="a-tag">Click here</a></p>
         </div>
+
       </form>
     </div>
   </div>

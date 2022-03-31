@@ -7,8 +7,20 @@ export default function Profile({ currentUser, users, setUsers}) {
   // const [msg, setMsg] = useState('')
   const [displayImg, setDisplayImg] = useState("")
 
+    let foundUser = users.find((user) => {
+      return  user._id === currentUser.id
+    })
+  
+  console.log(foundUser.name)
+  
+  // let showAllDecks
+  // if (deckIdx != -1) {
+  //   showAllDecks = category[deckIdx].decks.map((deck, i) => {
+  //     let userIdx = users.findIndex((object) => {
+  //       return object._id === deck.author
+  //     })
+
   useEffect(() => {
-    
     axios
       .get(`${process.env.REACT_APP_SERVER_URL}/api-v1/users/${currentUser.id}`)
       .then((response) => {
@@ -40,7 +52,7 @@ export default function Profile({ currentUser, users, setUsers}) {
 
         <h4 className="comingSoon">Favorites Coming Soon</h4>
       </div>
-    </div>
+</div>
   )
 }
 
