@@ -1,14 +1,22 @@
 import { Navigate } from "react-router-dom";
 import { useState, useEffect } from "react";
 import axios from "axios";
+import { toIdentifier } from "@babel/types";
 
 function EditDeck({decksId, categoryId, setShowForm, showForm, deckData}) {
 const [editForm, setEditForm] = useState(deckData)
 
+const [editCard, setEditCard] = useState(deckData.cards)
+
+console.log(editCard)
     const handleOnClick=(e)=>{
+        const finalForm = {deckName: editForm.deckName}
+        finalForm.cards = editCard
+        console.log(finalForm)
+        
         e.preventDefault()
         axios
-        .put(`${process.env.REACT_APP_SERVER_URL}/api-v1/category/${categoryId}/deck/${decksId}`, editForm)
+        .put(`${process.env.REACT_APP_SERVER_URL}/api-v1/category/${categoryId}/deck/${decksId}`, finalForm)
         .then((response) => {
             setShowForm(!showForm)
             return axios.get(`${process.env.REACT_APP_SERVER_URL}/api-v1/category/${categoryId}/deck/${decksId}`)
@@ -17,17 +25,45 @@ const [editForm, setEditForm] = useState(deckData)
     }
 
     
+    
     let showAllCards = deckData.cards.map((card, idx) => {
-        console.log(card)
+
+        const handleCardQuestion = (e) => {
+            const newDeck = [...editCard]
+            newDeck[idx].question = e.target.value
+            setEditCard(newDeck)
+        }
+        const handleCardAnswer = (e) => {
+            const newDeck = [...editCard]
+            newDeck[idx].answer = e.target.value
+            setEditCard(newDeck)
+        }
         return (
             <div key={`decks-${idx}`} >
-              <p>Question: {card.question}</p>
-              <p>Answer: {card.answer}</p>
+                <form onSubmit={handleOnClick}>
+                    <label htmlFor="question">Question:</label>
+                    <input 
+                        type="text" 
+                        placeholder="Question"
+                        value={editCard[idx].question}
+                        id="question" 
+                        onChange={handleCardQuestion}
+                    />
+
+                    <label htmlFor="answer">Answer</label>
+                    <input 
+                        type="text" 
+                        placeholder="Answer"
+                        value={editCard[idx].answer}
+                        id="answer"
+                        onChange = {handleCardAnswer}
+                    />
+                </form>
             </div>
           )
         })
       
-    // console.log(deckData.cards)
+    console.log(deckData.cards)
     // console.log(deckData.cards[0].question)
     // console.log(deckData.cards[0].answer)
     
@@ -65,6 +101,7 @@ const [editForm, setEditForm] = useState(deckData)
 
                 <input type='submit' />
             </form>
+            {showAllCards}
 
         </>
      );

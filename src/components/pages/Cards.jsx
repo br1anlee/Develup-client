@@ -8,6 +8,7 @@ export default function Cards({ category, setCategory }) {
   const { deckId } = useParams()
   const [deckData, setDeckData] = useState([])
   const [showForm, setShowForm] = useState(false)
+  const [num, setNum] = useState(0)
 
 
   useEffect(() => {
@@ -69,8 +70,10 @@ export default function Cards({ category, setCategory }) {
       )
     })
   }
-  const [num, setNum] = useState(0)
 
+  const cardNum =  currentDeck.decks[deckIdx].cards[num]
+
+  console.log(cardNum)
   
   return (
     <>
@@ -92,11 +95,11 @@ export default function Cards({ category, setCategory }) {
       <button
       onClick={() => setShowForm(!showForm)}
       >
-        {showForm ? 'exit' : 'edit'}
+        {showForm ? 'Return' : 'Edit'}
       </button>
         <br></br>
         <button onClick={handleSubmit}>Delete Deck</button>
-        <button onClick={()=>(setNum(num+1))}>Add</button>
+        {/* <button onClick={()=>(setNum(num+1))}>Add</button> */}
         </div>
     </>
   )
