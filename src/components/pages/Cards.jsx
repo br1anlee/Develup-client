@@ -101,7 +101,22 @@ export default function Cards({ category, setCategory }) {
         <br></br>
         <button onClick={handleSubmit}>Delete Deck</button>
         <button onClick={()=>(setNum(num+1))}>Add</button>
+        
         </div>
+        {/* {deckData.map((deckData, index) => {
+      // console.log(index)
+        <div className="card">
+          <div className="card-body">
+            <button className="btn-fermer" onClick={() => removeItem(index)}>
+              Next Card
+            </button>
+
+            <h6 className="card-id" key={deckData.id + index}>
+            </h6>
+          </div>
+        }
+        </div>   */}
+         
     </>
   )
 }
