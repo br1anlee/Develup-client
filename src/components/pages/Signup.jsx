@@ -2,6 +2,7 @@ import { useState } from 'react'
 import axios from 'axios'
 import jwt_decode from 'jwt-decode'
 import { Navigate } from 'react-router-dom'
+import "../layout/register.css"
 
 
 export default function Register({ currentUser, setCurrentUser }) {
@@ -52,58 +53,62 @@ export default function Register({ currentUser, setCurrentUser }) {
                     <h1>DevelUp +</h1>
                 </div>
           </div>
-    <div className="form-Container">
-      <h1 className="sign-in">Register</h1>      
-      <p>{msg}</p>
+    <div className="formContainer">
+      <div className="subMain">
+        <h1 className="sign-in">Register</h1>      
+        <h5 className="error-msg">{msg ? `${msg}` : ''}</h5>
+      </div>
 
       <form onSubmit={handleSubmit}>
 
         <div>
-        <label htmlFor="email">Email:</label>
         <input 
           type="email"
           id="email"
           value={form.email}
           onChange={e => setForm({ ...form, email: e.target.value })}
-          placeholder='enter your email...'
+          placeholder='Email'
+          className='emailInput'
           />
         </div>
 
         <div>
-        <label htmlFor="name">Name:</label>
         <input 
           type="text"
           id="name"
           value={form.name}
           onChange={e => setForm({ ...form, name: e.target.value })}
-          placeholder='enter your name...'
+          placeholder='Name'
+          className="nameInput"
           />
         </div>
 
         <div>
-        <label htmlFor="password">Password:</label>
         <input 
           type="password"
           id="password"
           value={form.password}
           onChange={e => setForm({ ...form, password: e.target.value })}
-          placeholder='enter your password...'
+          placeholder='Password'
+          className="passwordInput"
           />
         </div>
         
         <div>
-        <label htmlFor="passwordConfirmation">Confirmation:</label>
+        
         <input 
           type="password"
           id="passwordConfirmation"
           value={form.passwordConfirmation}
           onChange={e => setForm({ ...form, passwordConfirmation: e.target.value })}
-          placeholder='enter your confirmation...'
+          placeholder='Password Confirmation'
+          className="passwordInputConfirmation"
           />
         </div>
 
         <div className="center">
-          <input type="submit" />
+          <input type="submit" className="enterButton" />
+          <p>Have an account? <a href="/" className="a-tag">Click here</a></p>
         </div>
       </form>
     </div>
