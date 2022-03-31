@@ -2,20 +2,19 @@ import { useState, useEffect } from "react"
 import FileUploadForm from "../FileUploadForm"
 import axios from "axios"
 
-export default function Profile({ currentUser, users, setUsers}) {
+export default function Profile({ currentUser, users,}) {
   // const [msg, setMsg] = useState('')
   const [displayImg, setDisplayImg] = useState("")
 
     // let foundUser = users.find((user) => {
     //   return  user._id === currentUser.id
     // })
-    console.log(users)
+    // console.log(users)
   
   useEffect(() => {
     axios
       .get(`${process.env.REACT_APP_SERVER_URL}/api-v1/users/${currentUser.id}`)
       .then((response) => {
-          console.log(response.data)
         setDisplayImg(
           `https://res.cloudinary.com/solful/image/upload/c_thumb,g_face,h_300,w_300/${response.data.avatar}.png`
         )
