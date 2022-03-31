@@ -1,9 +1,9 @@
 import { useState, useEffect } from "react"
-import { useParams, useNavigate } from "react-router-dom"
+import { useParams, useNavigate, Navigate } from "react-router-dom"
 import EditDeck from "./EditDeck"
 import axios from "axios"
 
-export default function Cards({ category, setCategory }) {
+export default function Cards({ category, setCategory, currentUser }) {
   const { id, deckId } = useParams()
   const [deckData, setDeckData] = useState({
     cards: [],
@@ -31,7 +31,6 @@ export default function Cards({ category, setCategory }) {
       .delete(`${process.env.REACT_APP_SERVER_URL}/api-v1/category/${id}/deck/${deckId}`, category)
       .then((response) => {
         // console.log(response.data)
-        setDeckData({})
         return axios.get(process.env.REACT_APP_SERVER_URL + "/api-v1/category")
       })
       .then((response) => {
@@ -39,6 +38,10 @@ export default function Cards({ category, setCategory }) {
         navigate("/category")
       })
       .catch(console.log)
+  }
+
+  if (!deckData) {
+    return <Navigate to="/category" />
   }
   let showAllCards = deckData.cards.map((card, i) => {
     return (
@@ -66,9 +69,16 @@ export default function Cards({ category, setCategory }) {
         ) : (
           showAllCards
         )}
-        <button onClick={() => setShowForm(!showForm)}>{showForm ? "Return" : "Edit"}</button>
-        <br></br>
-        <button onClick={handleSubmit}>Delete Deck</button>
+
+        {currentUser.id === deckData.author ? (
+          <>
+            <button onClick={() => setShowForm(!showForm)}>{showForm ? "Return" : "Edit"}</button>
+            <br></br>
+            <button onClick={handleSubmit}>Delete Deck</button>{" "}
+          </>
+        ) : (
+          <></>
+        )}
         {/* <button onClick={()=>(setNum(num+1))}>Add</button> */}
       </div>
     </>

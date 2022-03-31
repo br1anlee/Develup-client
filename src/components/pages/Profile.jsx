@@ -6,8 +6,20 @@ export default function Profile({ currentUser, users, setUsers}) {
   // const [msg, setMsg] = useState('')
   const [displayImg, setDisplayImg] = useState("")
 
+    let foundUser = users.find((user) => {
+      return  user._id === currentUser.id
+    })
+  
+  console.log(foundUser.name)
+  
+  // let showAllDecks
+  // if (deckIdx != -1) {
+  //   showAllDecks = category[deckIdx].decks.map((deck, i) => {
+  //     let userIdx = users.findIndex((object) => {
+  //       return object._id === deck.author
+  //     })
+
   useEffect(() => {
-    
     axios
       .get(`${process.env.REACT_APP_SERVER_URL}/api-v1/users/${currentUser.id}`)
       .then((response) => {
@@ -28,11 +40,11 @@ export default function Profile({ currentUser, users, setUsers}) {
       `https://res.cloudinary.com/solful/image/upload/c_thumb,g_face,h_300,w_300/undefined.png`
         ? "No Profile Picture"
         : <img src={displayImg} alt="Profile picture" />}
-        {currentUser && 
+         
       <h3>
         {currentUser.name} | {currentUser.email}
       </h3>
-      }
+      
       <FileUploadForm currentUser={currentUser} setDisplayImg={setDisplayImg}/>
     </div>
   )

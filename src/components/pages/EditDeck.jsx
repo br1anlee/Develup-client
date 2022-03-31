@@ -8,7 +8,6 @@ function EditDeck({ decksId, categoryId, setShowForm, showForm, deckData }) {
   const handleOnClick = (e) => {
     const finalForm = { deckName: editForm.deckName }
     finalForm.cards = editCard
-    console.log(finalForm)
 
     e.preventDefault()
     axios
