@@ -13,12 +13,15 @@
     border: 1px solid #ccc;
     box-shadow: 2px 2px 6px 0px rgba(0, 0, 0, 0.3);
  }
- .card img {
+
+.card img {
     max-width: 100%;
 }
+
 .card .text {
     padding: 0 20px 20px;
 }
+
 .card .text > button {
     background: gray;
     border: 0;
@@ -33,6 +36,7 @@
   
 .team-title {
     text-align: center;
+    margin: 10px;
 }
   
 p {
@@ -42,4 +46,11 @@ p {
 
 .descriptionApp {
   font-size: 16px;
+  margin: 10px;
+}
+
+.timeDevel {
+    font-weight: 900;
+    margin: 5px;
+    font-size: 24px;
 }
