@@ -69,7 +69,8 @@ export default function Cards({ category, setCategory }) {
       )
     })
   }
-  const [num, setNum] = useState(0)
+
+  // const [num, setNum] = useState(0)
 
   
   return (
@@ -96,7 +97,7 @@ export default function Cards({ category, setCategory }) {
       </button>
         <br></br>
         <button onClick={handleSubmit}>Delete Deck</button>
-        <button onClick={()=>(setNum(num+1))}>Add</button>
+        {/* <button onClick={()=>(setNum(num+1))}>Add</button> */}
         </div>
     </>
   )
