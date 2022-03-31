@@ -10,10 +10,11 @@ const [editCard, setEditCard] = useState(deckData.cards)
 
 console.log(editCard)
     const handleOnClick=(e)=>{
+
         const finalForm = {deckName: editForm.deckName}
         finalForm.cards = editCard
         console.log(finalForm)
-        
+
         e.preventDefault()
         axios
         .put(`${process.env.REACT_APP_SERVER_URL}/api-v1/category/${categoryId}/deck/${decksId}`, finalForm)
@@ -24,26 +25,17 @@ console.log(editCard)
         .catch(console.log)
     }
 
-<<<<<<< HEAD
-    
-    
-    let showAllCards = deckData.cards.map((card, idx) => {
-=======
 
     let showAllCards = deckData.cards.map((card, idx) => {
         
 
->>>>>>> eee0a60 (edit works but needs backend to work)
 
         const handleCardQuestion = (e) => {
             const newDeck = [...editCard]
             newDeck[idx].question = e.target.value
             setEditCard(newDeck)
         }
-<<<<<<< HEAD
-=======
 
->>>>>>> eee0a60 (edit works but needs backend to work)
         const handleCardAnswer = (e) => {
             const newDeck = [...editCard]
             newDeck[idx].answer = e.target.value
@@ -67,11 +59,7 @@ console.log(editCard)
                         placeholder="Answer"
                         value={editCard[idx].answer}
                         id="answer"
-<<<<<<< HEAD
                         onChange = {handleCardAnswer}
-=======
-                        onChange = {e => setEditForm({...editForm, cardAnswer: e.target.value})}
->>>>>>> eee0a60 (edit works but needs backend to work)
                     />
                 </form>
             </div>
