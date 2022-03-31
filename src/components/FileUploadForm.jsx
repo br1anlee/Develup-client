@@ -42,4 +42,5 @@ export default function FileUploadForm({ currentUser, setDisplayImg }) {
             </form>
         </>
     )
+  }
 }

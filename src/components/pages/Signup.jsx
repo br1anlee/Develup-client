@@ -5,8 +5,7 @@ import { Navigate } from 'react-router-dom'
 import "../layout/register.css"
 
 
-
-export default function Register({ currentUser, setCurrentUser, setUsers}) {
+export default function Register({ currentUser, setCurrentUser, setUsers }) {
   const [form, setForm] = useState({
     email: '',
     password: '',
