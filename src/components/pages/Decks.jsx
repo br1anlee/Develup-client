@@ -44,14 +44,14 @@ export default function Deck({ category, currentUser, users }) {
 
             </div>
         </Link>
-            <div>
+            {/* <div>
               <form action="">
               <label hidden htmlFor="edit"></label>
               <button onClick={handleEditState}>Edit</button>
               <label hidden htmlFor="delete"></label>
               <button>Delete</button>
               </form>
-            </div>
+            </div> */}
           </div>
           {/* {currentUser.id === deck.author ? <EditDeck deck={deck} currentCategory={currentCategory}></EditDeck> : <></>} */}
         </>
