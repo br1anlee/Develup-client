@@ -66,7 +66,7 @@ export default function Login({currentUser, setCurrentUser}) {
                             id="email"
                             onChange={e => setForm({...form, email: e.target.value})}
                             value={form.email}
-                            placeholder="Email"
+                            placeholder="email"
                             className="emailInput"
                         />
                     </div>
@@ -78,12 +78,12 @@ export default function Login({currentUser, setCurrentUser}) {
                             id="password"
                             onChange={e => setForm({...form, password: e.target.value})}
                             value={form.password}
-                            placeholder="Password"
+                            placeholder="password"
                             className="passwordInput"
                         />
                     </div>
                     <button type="submit" className="enterButton">Enter</button>
-                    <p>Don't have an account? <a href="/signup" className="a-tag">Click here</a></p>
+                    <p>Don't have an account? <a href="/signup" className="a-tag">Create one</a></p>
                 </form>
 
                 

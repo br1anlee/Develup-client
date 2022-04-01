@@ -34,7 +34,7 @@ export default function Register({ currentUser, setCurrentUser, setUsers, users 
         const response2 = await axios.get(`${process.env.REACT_APP_SERVER_URL}/api-v1/users`)
         setUsers(response2.data)
       } else {
-        setMsg('the two passwords you entered do not match 🥴')
+        setMsg('The two passwords you entered do not match 🥴')
       }
     } catch (err) {
       if (err.response.status === 409) {
@@ -48,7 +48,7 @@ export default function Register({ currentUser, setCurrentUser, setUsers, users 
 
   return (
     <div className="container">
-          <div className="title-Main">
+          <div className="title-MainRegister">
                 <div className="image-Container">
                     <img src="/logo.png"/>
                 </div>
@@ -70,8 +70,8 @@ export default function Register({ currentUser, setCurrentUser, setUsers, users 
           id="email"
           value={form.email}
           onChange={e => setForm({ ...form, email: e.target.value })}
-          placeholder='Email'
-          className='emailInput'
+          placeholder='email'
+          className='emailInputRegister'
 
           />
         </div>
@@ -82,8 +82,8 @@ export default function Register({ currentUser, setCurrentUser, setUsers, users 
           id="name"
           value={form.name}
           onChange={e => setForm({ ...form, name: e.target.value })}
-          placeholder='Name'
-          className="nameInput"
+          placeholder='name'
+          className="nameInputRegister"
           />
         </div>
 
@@ -93,9 +93,9 @@ export default function Register({ currentUser, setCurrentUser, setUsers, users 
           id="password"
           value={form.password}
           onChange={e => setForm({ ...form, password: e.target.value })}
-          placeholder='Password'
+          placeholder='password'
 
-          className="passwordInput"
+          className="passwordInputRegister"
           />
         </div>
         
@@ -103,17 +103,17 @@ export default function Register({ currentUser, setCurrentUser, setUsers, users 
         
         <input 
           type="password"
-          id="passwordConfirmation"
+          id="passwordConfirmationRegister"
           value={form.passwordConfirmation}
           onChange={e => setForm({ ...form, passwordConfirmation: e.target.value })}
-          placeholder='Password Confirmation'
-          className="passwordInputConfirmation"
+          placeholder='password confirmation'
+          className="passwordInputConfirmationRegister"
           />
         </div>
 
         <div className="center">
-          <input type="submit" className="enterButton" />
-          <p>Have an account? <a href="/" className="a-tag">Click here</a></p>
+          <input type="submit" className="enterButtonRegister" value="Sign up"/>
+          <p>Already have an account? <a href="/" className="a-tag">Sign In</a></p>
         </div>
 
       </form>
