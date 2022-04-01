@@ -64,7 +64,7 @@ const handleLogout = () => {
 }
   return (
     <Router>
-      <Navbar currentUser={currentUser} handleLogout={handleLogout}/>
+      <Navbar currentUser={currentUser} handleLogout={handleLogout} users={users}/>
       <div>
       <Routes>
           {/* PATH to landing page (Landing page will be the login page) */}

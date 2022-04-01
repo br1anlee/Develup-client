@@ -2,6 +2,7 @@ import { useState, useEffect } from "react"
 import { useParams, useNavigate, Navigate } from "react-router-dom"
 import EditDeck from "./EditDeck"
 import axios from "axios"
+import ShowCards from "./ShowCards"
 
 export default function Cards({ category, setCategory, currentUser }) {
   const { id, deckId } = useParams()
@@ -10,9 +11,7 @@ export default function Cards({ category, setCategory, currentUser }) {
   })
   const [showForm, setShowForm] = useState(false)
   const [num, setNum] = useState(0)
-
   const [flip, setFlip] = useState(false)
-  
 
   let navigate = useNavigate()
 
@@ -43,35 +42,23 @@ export default function Cards({ category, setCategory, currentUser }) {
       .catch(console.log)
   }
 
-  if (!deckData) {
-    return <Navigate to="/category" />
-  }
-  let showAllCards = deckData.cards.map((card, i) => {
-    return (
-      <div key={`card-${i}`}>
-        <p>Question: {card.question}</p>
-        <p>Answer: {card.answer}</p>
-      </div>
-    )
-  })
+  // if (!deckData) {
+  //   return <Navigate to="/category" />
+  // }
 
-  const toggleDisplay = ()=>{
-
+  const toggleDisplay = () => {
     setFlip(!flip)
-
   }
 
   const handleAddNum = () => {
     setFlip(false)
-    if(num >= deckData.cards.length-1) {
+    if (num >= deckData.cards.length - 1) {
       setNum(0)
     } else {
-      setNum(num+1)
+      setNum(num + 1)
     }
   }
-  console.log(deckData.cards[num])
 
-  
   return (
       <div className="card-master-container">
 
@@ -84,6 +71,7 @@ export default function Cards({ category, setCategory, currentUser }) {
           showForm={showForm}
           deckData={deckData}
           />
+
           ) : (
             <></>
             )}
@@ -118,6 +106,7 @@ export default function Cards({ category, setCategory, currentUser }) {
         </div>
       ) : (
         <></>
+
         )}
       </div>
   )

@@ -8,7 +8,7 @@ import { useState } from "react"
 import { SidebarData } from "./SidebarData"
 import "./navbar.css"
 
-function Navbar({ currentUser, handleLogout }) {
+function Navbar({ currentUser, handleLogout, users}) {
   const [sidebar, setsidebar] = useState(false)
 
   const showSidebar = () => {
@@ -44,6 +44,11 @@ function Navbar({ currentUser, handleLogout }) {
     </>
   )
 
+  // let foundUser = users.find((user) => {
+  //   return  user._id === currentUser.id
+  // })
+  // console.log(foundUser.avatar)
+
   return (
     <div style={{zIndex: "1"}}>
       <div className="navbar">
@@ -64,8 +69,8 @@ function Navbar({ currentUser, handleLogout }) {
             </Link>
           </li>
           <li className="nav-text-nohover">
-    {/* {currentUser.avatar ?
-      <img alt="user" style={{ height: "40px", width: "40px", margin: "0" }} src={`https://res.cloudinary.com/solful/image/upload/c_thumb,g_face,h_200,w_200/${currentUser.avatar}.png`}></img> 
+    {/* {foundUser.avatar ?
+      <img alt="user" style={{ height: "40px", width: "40px", margin: "0" }} src={`https://res.cloudinary.com/solful/image/upload/c_thumb,g_face,h_200,w_200/${foundUser.avatar}.png`}></img> 
       :
      <img alt="user" style={{ height: "40px", width: "40px", margin: "0" }} src="./logo.png"></img>} */}
 
