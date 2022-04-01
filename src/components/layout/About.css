@@ -1,3 +1,11 @@
+.ourteam {
+    background-image: linear-gradient(to right, white,lightgray)
+}
+
+h4 {
+    font-weight: 300;
+}
+
 .cards {
     display: flex;
     flex-direction: row;
@@ -12,10 +20,13 @@
     margin: 10px;
     border: 1px solid #ccc;
     box-shadow: 2px 2px 6px 0px rgba(0, 0, 0, 0.3);
+    border-radius: 15px;
  }
 
 .card img {
     max-width: 100%;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
 }
 
 .card .text {
@@ -36,20 +47,24 @@
   
 .team-title {
     text-align: center;
+ 
     margin: 10px;
 }
   
 p {
     margin-top: 15px;
     margin-bottom: 15px;
+   
 }
 
 .descriptionApp {
   font-size: 16px;
+
   margin: 10px;
 }
 
 .timeDevel {
+    font: Poppins;
     font-weight: 900;
     margin: 5px;
     font-size: 24px;

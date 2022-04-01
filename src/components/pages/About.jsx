@@ -4,14 +4,12 @@ import { FaGithub, FaLinkedin } from "react-icons/fa"
 export default function Contact() {
   return (
     <>
-      <div className="main-title">
+      <div className="main-title" src="blue-gradient.jpeg">
         <h1>Welcome to DevelUp +</h1>
         <h5 className="descriptionApp">
-          DevelUp + allows users to create flashcards and organize them by categories. It is a BETTER version of Quizlet or Anki 😉. <div className="timeDevel">It's time to DevelUp!</div>
+          DevelUp + allows users to create flashcards and organize them by categories. It is a BETTER version of Quizlet or Anki. <div className="timeDevel">It's time to DevelUp!</div>
         </h5>
-      </div>
-
-      <h4 className="team-title">Meet the jamelCase 🐫 Team!</h4>
+        </div>
       <main className="cards team-title">
         <article className="card">
           <img src="images/jamel.jpg" alt="Photo of Jamel" />
@@ -45,7 +43,7 @@ export default function Contact() {
           <img src="images/gabe.jpg" alt="Photo of Gabe" />
           <div className="text">
             <h3>Gabe Guevara</h3>
-            <p>I am results oriented software engineer who enjoys working on financial related products. That is so important to me because I have several years helping people and companies achieve their goals through wealth management strategies. As the corporate landscape has evolved I am inspired to create the platforms that shape our world's financial future. I also love coding, family and lots of prayers they all stay together.</p>
+            <p>I am results oriented software engineer who enjoys working on financial related products. That is so important to me because I have several years helping people and companies achieve their goals through wealth management strategies. As the corporate landscape has evolved I am inspired to create the platforms that shape our world's financial future. I also love coding, family and pray they all stay together.</p>
             <a href="https://github.com/gitgabrielguevara" target="_blank">
               <FaGithub size={30}/>
             </a>
@@ -70,6 +68,9 @@ export default function Contact() {
           </div>
         </article>
       </main>
+      <div>
+      <h4 className="team-title">This App is proudly brought to you by team jamelCase 🐫</h4>
+      </div>
     </>
   )
 }
