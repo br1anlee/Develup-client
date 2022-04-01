@@ -73,40 +73,52 @@ export default function Cards({ category, setCategory, currentUser }) {
 
   
   return (
-    <>
-      <div className="center">
-        <h1>Deck Name: {deckData.deckName}</h1>
+      <div className="card-master-container">
 
         {showForm ? (
           <EditDeck
-            categoryId={id}
-            decksId={deckId}
-            category={category}
-            setShowForm={setShowForm}
-            showForm={showForm}
-            deckData={deckData}
+          categoryId={id}
+          decksId={deckId}
+          category={category}
+          setShowForm={setShowForm}
+          showForm={showForm}
+          deckData={deckData}
           />
-        ) : (
-          <></>
-        )}
+          ) : (
+            <></>
+            )}
 
-        {currentUser.id === deckData.author ? (
-          <>
-            <button onClick={() => setShowForm(!showForm)}>{showForm ? "Return" : "Edit"}</button>
-            <br></br>
-            <button onClick={handleSubmit}>Delete Deck</button>{" "}
-          </>
-        ) : (
-          <></>
-        )}
         <br></br>
-        <div>
-          <p>{deckData.cards[num] === undefined  ? "This is empty" : deckData.cards[num].question}</p>
-          {flip ? <p>{deckData.cards[num] === undefined  ? "This is empty" : deckData.cards[num].answer}</p> : <p></p>}
+
+        <div style={{position: "relative"}}className="card-container">
+
+            <h1 style={{position: "absolute", left:"20px", top: "20px", color: "white", textShadow: "0 0 2px black, 0 0 2px black, 0 0 2px black, 0 0 2px black"  }}>{deckData.deckName}</h1>
+
+
+          <div className="card-question-container">
+            <p>{deckData.cards[num] === undefined  ? "This is empty" : deckData.cards[num].question}</p>
+          </div>
+
+          {flip ?  <div className="card-answer-container"><p className="question-text">{deckData.cards[num] === undefined  ? "This is empty" : deckData.cards[num].answer}</p></div> : <div className="card-answer-ghost"></div>}
+
+
+          <div className="button-container">
+            {!flip ? <button onClick={toggleDisplay}>Show Answer</button> : <button onClick={toggleDisplay}>Hide Answer</button>}
+            <br>
+            </br>
+            <button onClick={handleAddNum}>Next Card</button>
+          </div>
         </div>
-        <button onClick={toggleDisplay}>Show Answer</button>
-        <button onClick={handleAddNum}>Next Card</button>
+      {currentUser.id === deckData.author ? (
+        <div className="deck-admin-tools">
+          <p>Deck Author Tools 🛠</p>
+          <button className="edit-button" onClick={() => setShowForm(!showForm)}>{showForm ? "Return" : "Edit Deck"}</button>
+          <br></br>
+          <button className="delete-button" onClick={handleSubmit}>Delete Deck</button>{" "}
+        </div>
+      ) : (
+        <></>
+        )}
       </div>
-    </>
   )
 }

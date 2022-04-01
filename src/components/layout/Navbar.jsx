@@ -45,7 +45,7 @@ function Navbar({ currentUser, handleLogout }) {
   )
 
   return (
-    <>
+    <div style={{zIndex: "1"}}>
       <div className="navbar">
         <Link to="#" className="menu-bars">
           <FaIcons.FaBars style={{ color: "white" }} onClick={showSidebar} />
@@ -93,7 +93,7 @@ function Navbar({ currentUser, handleLogout }) {
           {currentUser ? loggedIn : loggedOut}
         </ul>
       </nav>
-    </>
+    </div>
   )
 }
 

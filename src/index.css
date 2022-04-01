@@ -1,4 +1,6 @@
-@import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Bebas+Neue&family=Poppins&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -170,3 +172,98 @@ padding-right: 20px;
   font-size: 24px;
   color: white;
 }
+
+.card-master-container{
+  z-index: 0;
+  margin-top: 100px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.card-container{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items:center;
+  background: #C4C4C4;
+  border: 1px solid #000000;
+  box-sizing: border-box;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 20px;
+  height:500px;
+  width: 700px;
+  padding: 100px 0 20px 0;
+}
+
+
+.card-answer-container{
+  border-radius: 20px;
+  width: 500px;
+  background: #cfb4b4;
+  border: 1px solid #000000;
+  box-sizing: border-box;
+  padding: 20px;
+}
+.card-answer-ghost{
+  border-radius: 20px;
+  height: 100px;
+  background: #cfb4b4;
+  box-sizing: border-box;
+}
+
+.card-question-container{
+  border-radius: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 500px;
+  height: 100px;
+  background: #8fa18a;
+  border: 1px solid #000000;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+  margin-bottom: 30px;
+  padding: 20px;
+}
+.question-text{
+  text-align: center;
+}
+
+.button-container{
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.deck-admin-tools{
+ margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  border: 1px solid black;
+  border-radius: 10px;
+  padding: 0 10px 10px 10px;
+  background-color: antiquewhite;
+  width: 150px;
+  
+}
+.edit-button{
+  background-color: rgb(228, 186, 138);
+  border: 1px solid black;
+  border-radius: 2px;
+}
+.delete-button{
+  background-color: rgb(228, 138, 138);
+  border: 1px solid black;
+  border-radius: 2px;
+}
+.delete-button:active{
+  box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+.edit-button:active{
+  box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+/* rgb(228, 186, 138)
+rgb(228, 138, 138) */
