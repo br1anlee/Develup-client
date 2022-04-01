@@ -35,9 +35,9 @@ function VisibleCards ({currentCards, setCurrentCards, cards, newCard}) {
     })
 
     return ( 
-            <>
+            <div className="create-ghost-right">
             {cardsArray}
-            </>
+            </div>
      );
 }
 

@@ -78,7 +78,7 @@ function Create({ currentUser, setCategory, category }) {
       <div>
         <div>
           <form className='create-container-main' onSubmit={submitDeck}>
-            <div className="createFormContainer">
+
               <div className="create-container-left">
                 <div>
                   <label htmlFor="category-name" className="createLabel">Category</label>
@@ -147,7 +147,6 @@ function Create({ currentUser, setCategory, category }) {
                     </div>
 
                 </div>
-              </div>
             </div>
             <div className="create-container-right">
          
