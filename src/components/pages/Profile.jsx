@@ -1,9 +1,9 @@
 import { useState, useEffect } from "react"
 import FileUploadForm from "../FileUploadForm"
 import axios from "axios"
+import "../layout/profile.css"
 
 export default function Profile({ currentUser, users,}) {
-  // const [msg, setMsg] = useState('')
   const [displayImg, setDisplayImg] = useState("")
 
     // let foundUser = users.find((user) => {
@@ -26,17 +26,25 @@ export default function Profile({ currentUser, users,}) {
 
   return (
     <div className="center">
-      <h1>DevelUp Profile</h1>
+      <h1>{currentUser.name}'s Profile</h1>
       {displayImg ===
       `https://res.cloudinary.com/solful/image/upload/c_thumb,g_face,h_300,w_300/undefined.png`
         ? "No Profile Picture"
-        : <img src={displayImg} alt="Profile picture" />}
-         
-      <h3>
-        {currentUser.name} | {currentUser.email}
-      </h3>
+        : <img className="img" src={displayImg} alt="Profile picture" />}
+
+      <h2>
+        {currentUser.name}
+        <br></br>
+        {currentUser.email}
+      </h2>
+
       
       <FileUploadForm currentUser={currentUser} setDisplayImg={setDisplayImg}/>
+
+      <h1 className="spacing"> COMING SOON!</h1>
+      <h3>Favorite Decks</h3>
+      <img src="images/mongodb-card.png" alt="Node-card" />
+      <img src="images/node-card.png" alt="Node-card" />
     </div>
   )
 }
