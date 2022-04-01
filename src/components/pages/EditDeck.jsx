@@ -37,7 +37,6 @@ function EditDeck({ decksId, categoryId, setShowForm, showForm, deckData }) {
     }
     return (
       <div key={`decks-${idx}`}>
-        {/* <form onSubmit={handleOnClick}> */}
         <label htmlFor="question">Question:</label>
         <input
           type="text"
@@ -55,7 +54,6 @@ function EditDeck({ decksId, categoryId, setShowForm, showForm, deckData }) {
           id="answer"
           onChange={handleCardAnswer}
         />
-        {/* </form> */}
       </div>
     )
   })

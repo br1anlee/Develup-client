@@ -1,48 +1,23 @@
-* {
-    font-family: Poppins;
-    padding: 0px;
-    margin: 0px;
-    background-color: C4C4C4;
-  }
-.profileName {
-    margin: 10px;
-}
-
-.image-container {
-    border: 2px solid black;
-    width: 304px;
-    height: 304px;
-    margin: auto;
-}
-
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
 
 
 .uploadAvatar {
     font-size: 16px;
     margin: 5px;
 }
-
 .submitButton {
-    width: 100.88px;
-    height: 20.5px;
+    width: 150px;
+    height: 50px;
     left: 581px;
     top: 456px;
-    background: #C4C4C4;
-    border: 0.785844px solid #000000;
+    color: white;
+    background: #283342;
+    border: 0.785844px solid #eff1f4;
     box-sizing: border-box;
     border-radius: 5.50091px;
     margin-top: 10px;
-}
-
-.formProfileContainer {
-    background-color: rgba(36,45,58);
-    width: 426.71px;
-    height: 600px;
-    top: 109px;
-    left: 427px;
-    margin: auto;
-    color: white;
-    border: 2.35753px solid #283342;
+    cursor: pointer;
+    font-size: 30px;
 }
 
 .comingSoon {
@@ -51,4 +26,16 @@
 
 .emailAddress {
     padding: 10px;
+}
+
+.img {
+    border-radius: 50%;
+  }
+
+  .name {
+      text-align: left;
+  }
+
+.spacing {
+    margin-top: 50px;
 }
