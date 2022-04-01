@@ -10,6 +10,7 @@ export default function Cards({ category, setCategory, currentUser }) {
   });
   const [showForm, setShowForm] = useState(false);
   const [num, setNum] = useState(0);
+  const [answer, setAnswer] = useState("")
 
   const [flip, setFlip] = useState(false);
 
@@ -65,6 +66,7 @@ export default function Cards({ category, setCategory, currentUser }) {
 
   const handleAddNum = () => {
     setFlip(false);
+    setAnswer("")
     if (num >= deckData.cards.length - 1) {
       setNum(0);
     } else {
@@ -88,6 +90,19 @@ export default function Cards({ category, setCategory, currentUser }) {
         >
           {deckData.deckName}
         </h1>
+        <h1
+          style={{
+            position: 'absolute',
+            right: '20px',
+            top: '10px',
+            color: 'white',
+            textShadow:
+              '0 0 2px black, 0 0 2px black, 0 0 2px black, 0 0 2px black',
+          }}
+        >
+          <p>{num+1}/{deckData.cards.length}</p>
+        </h1>
+          <div>
 
         <div className="card-question-container">
           <p>
@@ -96,6 +111,10 @@ export default function Cards({ category, setCategory, currentUser }) {
               : deckData.cards[num].question}
           </p>
         </div>
+        <div className="card-user-answer">
+          <input style={{width: '500px', height: "50px", textAlign: 'center'}} type="text" value={answer} onChange={(e)=>setAnswer(e.target.value)}></input>
+        </div>
+          </div>
 
         {flip ? (
           <div className="card-answer-container">
@@ -111,12 +130,12 @@ export default function Cards({ category, setCategory, currentUser }) {
 
         <div className="button-container">
           {!flip ? (
-            <button onClick={toggleDisplay}>Show Answer</button>
+            <button className="card-buttons" onClick={toggleDisplay}>Show Answer</button>
           ) : (
-            <button onClick={toggleDisplay}>Hide Answer</button>
+            <button className="card-buttons" onClick={toggleDisplay}>Hide Answer</button>
           )}
           <br></br>
-          <button onClick={handleAddNum}>Next Card</button>
+          <button className="card-buttons-next" onClick={handleAddNum}>Next Card</button>
         </div>
       </div>
       {currentUser.id === deckData.author ? (
