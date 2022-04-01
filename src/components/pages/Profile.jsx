@@ -43,8 +43,9 @@ export default function Profile({ currentUser, users,}) {
 
       <h1 className="spacing"> COMING SOON!</h1>
       <h3>Favorite Decks</h3>
-      <img height="300px" width="auto" src="images/mongodb-card.png" alt="Node-card" />
-      <img height="300px" width="auto" src="images/node-card.png" alt="Node-card" />
+
+      <img src="images/mongodb-card.png" alt="Node-card" width="350px" height="220px"/>
+      <img src="images/node-card.png" alt="Node-card" width="350px" height="220px"/>
     </div>
   )
 }
