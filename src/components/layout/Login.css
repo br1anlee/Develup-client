@@ -15,7 +15,7 @@
   justify-content: center;
   padding: 2rem;
   background-color: rgba(235,235,235);
-  width: 426.71px;
+  width: 350.71px;
   height: 99.8px;
   top: 109px;
   left: 427px;
@@ -35,8 +35,8 @@
 
 .formContainer {
     background-color: rgba(36,45,58);
-    width: 426.71px;
-    height: 200px;
+    width: 350.71px;
+    height: 250px;
     top: 109px;
     left: 427px;
     margin: auto;
@@ -48,7 +48,7 @@
 }
 
 .emailInput {
-    width: 200.28px;
+    width: 250.28px;
     height: 25.08px;
     left: 442.72px;
     top: 298px;
@@ -57,10 +57,16 @@
     box-sizing: border-box;
     box-shadow: inset 0px 3.14338px 3.14338px rgba(0, 0, 0, 0.25);
     margin: 10px;
+    padding: 15px 0px 15px 10px;
     }
 
+.emailInput::placeholder, .passwordInput::placeholder {
+  font-style: italic;
+  padding: 5px;
+}
+
 .passwordInput {
-    width: 200.28px;
+    width: 250.28px;
     height: 25.08px;
     left: 442.72px;
     top: 298px;
@@ -68,6 +74,8 @@
     border: 0.785844px solid #000000;
     box-sizing: border-box;
     box-shadow: inset 0px 3.14338px 3.14338px rgba(0, 0, 0, 0.25);
+    margin: 10px;
+    padding: 15px 0px 15px 10px;
 }
 
 .enterButton {
@@ -80,6 +88,7 @@
     box-sizing: border-box;
     border-radius: 5.50091px;
     margin-top: 10px;
+
 }
 
 .a-tag {
@@ -110,4 +119,10 @@
   border: 0.785844px solid #000000;
   box-sizing: border-box;
   box-shadow: inset 0px 3.14338px 3.14338px rgba(0, 0, 0, 0.25);
+}
+
+.sign-in {
+  margin-top: 25px;
+  margin-bottom: 10px;
+  font-size: 24px;
 }
