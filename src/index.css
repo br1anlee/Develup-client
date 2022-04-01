@@ -107,18 +107,37 @@ code {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  margin-left: 20px;
-  margin-top: 20px;
+  margin-left: 300px;
+  margin-top: 0px;
 }
 .create-container-right{
 display: flex;
 flex-direction: column;
+margin-top:100px;
 justify-content: center;
 align-items: center;
 padding-right: 20px;
+margin-right: 100px;
+margin-left: 100px;
+}
+.create-ghost-right{
+  width: 400px;
 }
 .create-card-div{
   background-color: #C4C4C4;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 150px;
+  width: 400px;
+  padding: 50px 20px 50px 20px;
+  border: 1px solid black;
+  border-radius: 10px;
+  margin: 20px 20px 20px 0px;
+}
+.create-card-div-edit{
+  background-color: white;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -167,7 +186,7 @@ padding-right: 20px;
 }
 
 .createFormContainer {
-  background-color: rgba(36,45,58);
+  /* background-color: rgba(36,45,58); */
   margin: auto;
   position: static;
 
@@ -175,7 +194,7 @@ padding-right: 20px;
 
 .createLabel {
   font-size: 24px;
-  color: white;
+  color: black;
 }
 
 .card-master-container{
