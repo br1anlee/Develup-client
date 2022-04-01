@@ -2,7 +2,6 @@ import { useState, useEffect } from "react"
 import { useParams, useNavigate, Navigate } from "react-router-dom"
 import EditDeck from "./EditDeck"
 import axios from "axios"
-import ShowCards from "./ShowCards"
 
 export default function Cards({ category, setCategory, currentUser }) {
   const { id, deckId } = useParams()
