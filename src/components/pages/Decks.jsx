@@ -15,20 +15,20 @@ export default function Deck({ category, currentUser, users }) {
       })
       return (
         <>
-          <div className="deck-div" key={`category-link${i}`} >
         <Link key={`link-link${i}`} to={`/category/${id}/deck/${deck._id}`} style={{textDecoration: 'none'}}>
+          <div className="deck-div" key={`category-link${i}`} >
             <div key={`deckName-Div-link${i}`}>
             <p key={`deckName-link${i}`} className="category-text">
               {deck.deckName}
             </p>
 
-            <div className="category-text-small">{deck.cards.length < 2 ? <p>{deck.cards.length} Card</p> : <p>{deck.cards.length} Cards</p>} </div>
-            <p className="category-text-small">Author: {users[userIdx] ? users[userIdx].name : "Still loading..."}</p>
+            <div className="category-text-small">{deck.cards.length < 2 ? <p style={{margin:0}}>{deck.cards.length} Card</p> : <p style={{margin:0}}>{deck.cards.length} Cards</p>} </div>
+            <p style={{margin:0}}className="category-text-small">Author: {users[userIdx] ? users[userIdx].name : "Still loading..."}</p>
 
             </div>
-        </Link>
           
           </div>
+        </Link>
         </>
       )
     })

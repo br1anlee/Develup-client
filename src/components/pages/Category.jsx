@@ -9,11 +9,11 @@ export default function Category({ category }) {
         style={{ textDecoration: 'none' }}
       >
         <div className="category-div" key={`category-link${i}`}>
-          <p key={`category-name-${i}`} className="category-text">
+          <p style={{padding: 0}}key={`category-name-${i}`} className="category-text">
             {category.name}
           </p>
           <div key={`deck-number-${i}`} className="category-text-small">
-            {category.decks.length < 2 ? <p> {category.decks.length} deck</p> : <p> {category.decks.length} decks</p>}
+            {category.decks.length < 2 ? <p style={{padding: 0, margin: 0}}> {category.decks.length} deck</p> : <p style={{padding: 0, margin:0}}> {category.decks.length} decks</p>}
           </div>
         </div>
       </Link>
