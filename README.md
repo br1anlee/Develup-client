@@ -14,7 +14,7 @@ A fullstack application that allows users to create flash cards and organize the
 
 ## Deployed Link
 ---
-TBA
+https://develupp.netlify.app
 ---
 ## Installation Instructions
 ---
