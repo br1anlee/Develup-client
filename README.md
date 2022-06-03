@@ -16,6 +16,11 @@ A fullstack application that allows users to create flash cards and organize the
 ---
 https://develupp.netlify.app
 ---
+
+## Server Link
+---
+https://github.com/br1anlee/Develup-server
+---
 ## Installation Instructions
 ---
 
@@ -298,7 +303,7 @@ const toggleDisplay = () => {
 
 ## Reflection
 
-Will be filled by each individual member on their own Branch
+I really did enjoy working on this project because it allowed me to work in a team environment and made me learn new technologies. Looking back on this project, I wish that I projected more of my thinking to my teammates instead of being very quiet have of the time.
 
 ## Resources 
 - https://cloudinary.com/
